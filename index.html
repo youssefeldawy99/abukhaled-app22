@@ -54,113 +54,129 @@
             <button onclick="filterCategory('mahshi', this)" class="tab-btn bg-white text-gray-700 px-5 py-2 rounded-full font-medium text-xs border border-gray-200 shadow-sm transition">محاشي ومعجنات</button>
         </nav>
 
-        <!-- المنيو (بدون صور لتصميم فخم وراقي) -->
-        <main id="menu-container" class="p-4 grid grid-cols-1 gap-3">
+        <!-- المنيو (بتصميم راقي جداً جاهز لصور الأكل الحقيقي) -->
+        <main id="menu-container" class="p-4 grid grid-cols-1 gap-4">
             
             <!-- مشويات -->
-            <div class="menu-item bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between" data-category="grills">
-                <div>
-                    <h2 class="text-base font-bold text-ak-dark mb-1">كيلو كباب ضاني</h2>
+            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col justify-between" data-category="grills">
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h2 class="text-base font-bold text-ak-dark">كيلو كباب ضاني</h2>
+                        <span class="text-lg font-extrabold text-ak-gold">1340 <span class="text-xs text-gray-400">ج.م</span></span>
+                    </div>
                     <p class="text-gray-500 text-xs mb-3">لحم ضاني بلدي مشوي على الفحم بتتبيلة أبو خالد الخاصة.</p>
                 </div>
-                <div class="flex justify-between items-center pt-2 border-t border-gray-100">
-                    <span class="text-xl font-extrabold text-ak-gold">1340 <span class="text-xs text-gray-400">ج.م</span></span>
-                    <button onclick="addToCart('كيلو كباب ضاني', 1340, this)" class="bg-ak-gold text-white px-5 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5">
-                        <i class="fa-solid fa-cart-plus"></i> أضف
+                <div class="px-4 pb-4 pt-0 flex justify-end">
+                    <button onclick="addToCart('كيلو كباب ضاني', 1340, this)" class="bg-ak-gold text-white px-6 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5 w-full justify-center">
+                        <i class="fa-solid fa-cart-plus"></i> أضف للسلة
                     </button>
                 </div>
             </div>
 
-            <div class="menu-item bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between" data-category="grills">
-                <div>
-                    <h2 class="text-base font-bold text-ak-dark mb-1">كيلو ريش ضاني</h2>
+            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col justify-between" data-category="grills">
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h2 class="text-base font-bold text-ak-dark">كيلو ريش ضاني</h2>
+                        <span class="text-lg font-extrabold text-ak-gold">1528 <span class="text-xs text-gray-400">ج.م</span></span>
+                    </div>
                     <p class="text-gray-500 text-xs mb-3">ريش ضاني طري ومشوي باحترافية على الفحم.</p>
                 </div>
-                <div class="flex justify-between items-center pt-2 border-t border-gray-100">
-                    <span class="text-xl font-extrabold text-ak-gold">1528 <span class="text-xs text-gray-400">ج.م</span></span>
-                    <button onclick="addToCart('كيلو ريش ضاني', 1528, this)" class="bg-ak-gold text-white px-5 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5">
-                        <i class="fa-solid fa-cart-plus"></i> أضف
+                <div class="px-4 pb-4 pt-0 flex justify-end">
+                    <button onclick="addToCart('كيلو ريش ضاني', 1528, this)" class="bg-ak-gold text-white px-6 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5 w-full justify-center">
+                        <i class="fa-solid fa-cart-plus"></i> أضف للسلة
                     </button>
                 </div>
             </div>
 
             <!-- أطباق رئيسية -->
-            <div class="menu-item bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between" data-category="mains">
-                <div>
-                    <h2 class="text-base font-bold text-ak-dark mb-1">نصف بطة + ملوخية + أرز أبيض</h2>
+            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col justify-between" data-category="mains">
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h2 class="text-base font-bold text-ak-dark">نصف بطة + ملوخية + أرز أبيض</h2>
+                        <span class="text-lg font-extrabold text-ak-gold">311 <span class="text-xs text-gray-400">ج.م</span></span>
+                    </div>
                     <p class="text-gray-500 text-xs mb-3">وجبة متكاملة: نصف بطة، ملوخية الطشة وأرز أبيض مفلفل.</p>
                 </div>
-                <div class="flex justify-between items-center pt-2 border-t border-gray-100">
-                    <span class="text-xl font-extrabold text-ak-gold">311 <span class="text-xs text-gray-400">ج.م</span></span>
-                    <button onclick="addToCart('نصف بطة مع ملوخية وأرز', 311, this)" class="bg-ak-gold text-white px-5 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5">
-                        <i class="fa-solid fa-cart-plus"></i> أضف
+                <div class="px-4 pb-4 pt-0 flex justify-end">
+                    <button onclick="addToCart('نصف بطة مع ملوخية وأرز', 311, this)" class="bg-ak-gold text-white px-6 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5 w-full justify-center">
+                        <i class="fa-solid fa-cart-plus"></i> أضف للسلة
                     </button>
                 </div>
             </div>
 
-            <div class="menu-item bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between" data-category="mains">
-                <div>
-                    <h2 class="text-base font-bold text-ak-dark mb-1">مكس جريل أبو خالد</h2>
+            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col justify-between" data-category="mains">
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h2 class="text-base font-bold text-ak-dark">مكس جريل أبو خالد</h2>
+                        <span class="text-lg font-extrabold text-ak-gold">499 <span class="text-xs text-gray-400">ج.م</span></span>
+                    </div>
                     <p class="text-gray-500 text-xs mb-3">كباب، كفتة، شيش طاووق، وكبده مع أرز بسمتي.</p>
                 </div>
-                <div class="flex justify-between items-center pt-2 border-t border-gray-100">
-                    <span class="text-xl font-extrabold text-ak-gold">499 <span class="text-xs text-gray-400">ج.م</span></span>
-                    <button onclick="addToCart('مكس جريل أبو خالد', 499, this)" class="bg-ak-gold text-white px-5 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5">
-                        <i class="fa-solid fa-cart-plus"></i> أضف
+                <div class="px-4 pb-4 pt-0 flex justify-end">
+                    <button onclick="addToCart('مكس جريل أبو خالد', 499, this)" class="bg-ak-gold text-white px-6 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5 w-full justify-center">
+                        <i class="fa-solid fa-cart-plus"></i> أضف للسلة
                     </button>
                 </div>
             </div>
 
             <!-- طواجن -->
-            <div class="menu-item bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between" data-category="tagine">
-                <div>
-                    <h2 class="text-base font-bold text-ak-dark mb-1">طاجن عكاوي</h2>
+            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col justify-between" data-category="tagine">
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h2 class="text-base font-bold text-ak-dark">طاجن عكاوي</h2>
+                        <span class="text-lg font-extrabold text-ak-gold">433 <span class="text-xs text-gray-400">ج.م</span></span>
+                    </div>
                     <p class="text-gray-500 text-xs mb-3">عكاوي مطهية في الفرن بالطريقة البلدي مع البصل والخضار.</p>
                 </div>
-                <div class="flex justify-between items-center pt-2 border-t border-gray-100">
-                    <span class="text-xl font-extrabold text-ak-gold">433 <span class="text-xs text-gray-400">ج.م</span></span>
-                    <button onclick="addToCart('طاجن عكاوي', 433, this)" class="bg-ak-gold text-white px-5 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5">
-                        <i class="fa-solid fa-cart-plus"></i> أضف
+                <div class="px-4 pb-4 pt-0 flex justify-end">
+                    <button onclick="addToCart('طاجن عكاوي', 433, this)" class="bg-ak-gold text-white px-6 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5 w-full justify-center">
+                        <i class="fa-solid fa-cart-plus"></i> أضف للسلة
                     </button>
                 </div>
             </div>
 
-            <div class="menu-item bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between" data-category="tagine">
-                <div>
-                    <h2 class="text-base font-bold text-ak-dark mb-1">طاجن كباب حله مع أرز + خبز</h2>
+            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col justify-between" data-category="tagine">
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h2 class="text-base font-bold text-ak-dark">طاجن كباب حله مع أرز + خبز</h2>
+                        <span class="text-lg font-extrabold text-ak-gold">272 <span class="text-xs text-gray-400">ج.م</span></span>
+                    </div>
                     <p class="text-gray-500 text-xs mb-3">لحم طري بصوص البصل الكراميل الشهي.</p>
                 </div>
-                <div class="flex justify-between items-center pt-2 border-t border-gray-100">
-                    <span class="text-xl font-extrabold text-ak-gold">272 <span class="text-xs text-gray-400">ج.م</span></span>
-                    <button onclick="addToCart('طاجن كباب حله', 272, this)" class="bg-ak-gold text-white px-5 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5">
-                        <i class="fa-solid fa-cart-plus"></i> أضف
+                <div class="px-4 pb-4 pt-0 flex justify-end">
+                    <button onclick="addToCart('طاجن كباب حله', 272, this)" class="bg-ak-gold text-white px-6 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5 w-full justify-center">
+                        <i class="fa-solid fa-cart-plus"></i> أضف للسلة
                     </button>
                 </div>
             </div>
 
             <!-- محاشي ومعجنات -->
-            <div class="menu-item bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between" data-category="mahshi">
-                <div>
-                    <h2 class="text-base font-bold text-ak-dark mb-1">سرفيس محاشي بالكوارع</h2>
+            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col justify-between" data-category="mahshi">
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h2 class="text-base font-bold text-ak-dark">سرفيس محاشي بالكوارع</h2>
+                        <span class="text-lg font-extrabold text-ak-gold">1184 <span class="text-xs text-gray-400">ج.م</span></span>
+                    </div>
                     <p class="text-gray-500 text-xs mb-3">ورق عنب، كرنب، ممبار، سمبوسه، وكبيبة مع كوارع.</p>
                 </div>
-                <div class="flex justify-between items-center pt-2 border-t border-gray-100">
-                    <span class="text-xl font-extrabold text-ak-gold">1184 <span class="text-xs text-gray-400">ج.م</span></span>
-                    <button onclick="addToCart('سرفيس محاشي بالكوارع', 1184, this)" class="bg-ak-gold text-white px-5 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5">
-                        <i class="fa-solid fa-cart-plus"></i> أضف
+                <div class="px-4 pb-4 pt-0 flex justify-end">
+                    <button onclick="addToCart('سرفيس محاشي بالكوارع', 1184, this)" class="bg-ak-gold text-white px-6 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5 w-full justify-center">
+                        <i class="fa-solid fa-cart-plus"></i> أضف للسلة
                     </button>
                 </div>
             </div>
 
-            <div class="menu-item bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between" data-category="mahshi">
-                <div>
-                    <h2 class="text-base font-bold text-ak-dark mb-1">ورق عنب بالكوارع مع الشوربة</h2>
+            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col justify-between" data-category="mahshi">
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h2 class="text-base font-bold text-ak-dark">ورق عنب بالكوارع مع الشوربة</h2>
+                        <span class="text-lg font-extrabold text-ak-gold">336 <span class="text-xs text-gray-400">ج.م</span></span>
+                    </div>
                     <p class="text-gray-500 text-xs mb-3">أصابع ورق عنب مذابة مع قطع كوارع غنية.</p>
                 </div>
-                <div class="flex justify-between items-center pt-2 border-t border-gray-100">
-                    <span class="text-xl font-extrabold text-ak-gold">336 <span class="text-xs text-gray-400">ج.م</span></span>
-                    <button onclick="addToCart('ورق عنب بالكوارع', 336, this)" class="bg-ak-gold text-white px-5 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5">
-                        <i class="fa-solid fa-cart-plus"></i> أضف
+                <div class="px-4 pb-4 pt-0 flex justify-end">
+                    <button onclick="addToCart('ورق عنب بالكوارع', 336, this)" class="bg-ak-gold text-white px-6 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5 w-full justify-center">
+                        <i class="fa-solid fa-cart-plus"></i> أضف للسلة
                     </button>
                 </div>
             </div>
@@ -178,7 +194,7 @@
                 <i class="fa-solid fa-cart-shopping mb-1 text-xl text-gray-700 group-hover:text-ak-gold transition"></i>
                 <span class="text-[11px] font-bold mt-1 text-gray-700 group-hover:text-ak-gold transition">طلباتي</span>
             </button>
-            <a href="https://wa.me/201222200506?text=أهلاً%20مطعنم%20أبو%20خالد،%20أستفسر%20عن..." target="_blank" class="flex flex-col items-center text-gray-400 hover:text-ak-gold transition">
+            <a href="https://wa.me/201145001175?text=أهلاً%20مطعم%20أبو%20خالد،%20أستفسر%20عن..." target="_blank" class="flex flex-col items-center text-gray-400 hover:text-ak-gold transition">
                 <i class="fa-brands fa-whatsapp mb-1 text-xl text-green-600"></i>
                 <span class="text-[11px] font-bold mt-1 text-gray-700">تواصل واتساب</span>
             </a>
@@ -188,7 +204,8 @@
 
     <script>
         let cart = [];
-        const whatsappNumber = "201222200506"; // رقم الواتساب المباشر
+        // رقم الواتساب الخاص بك للتجربة
+        const whatsappNumber = "201145001175"; 
 
         function filterCategory(category, button) {
             document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -217,7 +234,7 @@
             
             let originalText = button.innerHTML;
             button.classList.add('added-to-cart');
-            button.innerHTML = '<i class="fa-solid fa-check"></i> تم';
+            button.innerHTML = '<i class="fa-solid fa-check"></i> تم الإضافة';
             
             setTimeout(() => {
                 button.classList.remove('added-to-cart');
