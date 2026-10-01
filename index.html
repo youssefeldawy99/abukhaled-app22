@@ -13,7 +13,7 @@
             theme: {
                 extend: { 
                     colors: { 
-                        'ak-bg': '#F8F9FA',
+                        'ak-bg': '#F9F8F6',
                         'ak-gold': '#C5A059',
                         'ak-dark': '#1a1a1a', 
                     }
@@ -40,8 +40,8 @@
                 <img src="AK Logo.jpg" alt="لوجو أبو خالد" class="h-10 w-10 ml-2 rounded-full border border-gray-100 shadow-sm object-cover">
                 <span class="text-lg text-ak-dark font-extrabold">أبو خالد</span>
             </div>
-            <a href="tel:15000" class="bg-ak-gold text-white px-4 py-1.5 rounded-full font-bold text-xs shadow-md hover:bg-yellow-600 transition flex items-center gap-1.5">
-                <i class="fa-solid fa-phone"></i> الخط الساخن
+            <a href="tel:01222200506" class="bg-ak-gold text-white px-4 py-1.5 rounded-full font-bold text-xs shadow-md hover:bg-yellow-600 transition flex items-center gap-1.5">
+                <i class="fa-solid fa-phone"></i> اتصل بنا
             </a>
         </header>
 
@@ -54,106 +54,114 @@
             <button onclick="filterCategory('mahshi', this)" class="tab-btn bg-white text-gray-700 px-5 py-2 rounded-full font-medium text-xs border border-gray-200 shadow-sm transition">محاشي ومعجنات</button>
         </nav>
 
-        <!-- المنيو -->
-        <main id="menu-container" class="p-4 grid grid-cols-1 gap-4">
+        <!-- المنيو (بدون صور لتصميم فخم وراقي) -->
+        <main id="menu-container" class="p-4 grid grid-cols-1 gap-3">
             
             <!-- مشويات -->
-            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm" data-category="grills">
-                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=600&auto=format&fit=crop" class="w-full h-40 object-cover">
-                <div class="p-3">
+            <div class="menu-item bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between" data-category="grills">
+                <div>
                     <h2 class="text-base font-bold text-ak-dark mb-1">كيلو كباب ضاني</h2>
-                    <p class="text-gray-500 text-xs mb-2">لحم ضاني بلدي مشوي على الفحم بتتبيلة أبو خالد الخاصة.</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-xl font-extrabold text-ak-gold">1340 <span class="text-xs text-gray-400">ج.م</span></span>
-                        <button onclick="addToCart('كيلو كباب ضاني', 1340, this)" class="bg-ak-gold text-white px-4 py-1.5 rounded-xl font-bold text-xs shadow hover:scale-105 transition">أضف</button>
-                    </div>
+                    <p class="text-gray-500 text-xs mb-3">لحم ضاني بلدي مشوي على الفحم بتتبيلة أبو خالد الخاصة.</p>
+                </div>
+                <div class="flex justify-between items-center pt-2 border-t border-gray-100">
+                    <span class="text-xl font-extrabold text-ak-gold">1340 <span class="text-xs text-gray-400">ج.م</span></span>
+                    <button onclick="addToCart('كيلو كباب ضاني', 1340, this)" class="bg-ak-gold text-white px-5 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-cart-plus"></i> أضف
+                    </button>
                 </div>
             </div>
 
-            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm" data-category="grills">
-                <img src="https://images.unsplash.com/photo-1544025162-8111142154ea?q=80&w=600&auto=format&fit=crop" class="w-full h-40 object-cover">
-                <div class="p-3">
+            <div class="menu-item bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between" data-category="grills">
+                <div>
                     <h2 class="text-base font-bold text-ak-dark mb-1">كيلو ريش ضاني</h2>
-                    <p class="text-gray-500 text-xs mb-2">ريش ضاني طري ومشوي باحترافية على الفحم.</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-xl font-extrabold text-ak-gold">1528 <span class="text-xs text-gray-400">ج.م</span></span>
-                        <button onclick="addToCart('كيلو ريش ضاني', 1528, this)" class="bg-ak-gold text-white px-4 py-1.5 rounded-xl font-bold text-xs shadow hover:scale-105 transition">أضف</button>
-                    </div>
+                    <p class="text-gray-500 text-xs mb-3">ريش ضاني طري ومشوي باحترافية على الفحم.</p>
+                </div>
+                <div class="flex justify-between items-center pt-2 border-t border-gray-100">
+                    <span class="text-xl font-extrabold text-ak-gold">1528 <span class="text-xs text-gray-400">ج.م</span></span>
+                    <button onclick="addToCart('كيلو ريش ضاني', 1528, this)" class="bg-ak-gold text-white px-5 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-cart-plus"></i> أضف
+                    </button>
                 </div>
             </div>
 
             <!-- أطباق رئيسية -->
-            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm" data-category="mains">
-                <img src="https://images.unsplash.com/photo-1518492104633-130d0cc84637?q=80&w=600&auto=format&fit=crop" class="w-full h-40 object-cover">
-                <div class="p-3">
+            <div class="menu-item bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between" data-category="mains">
+                <div>
                     <h2 class="text-base font-bold text-ak-dark mb-1">نصف بطة + ملوخية + أرز أبيض</h2>
-                    <p class="text-gray-500 text-xs mb-2">وجبة متكاملة: نصف بطة، ملوخية الطشة وأرز أبيض مفلفل.</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-xl font-extrabold text-ak-gold">311 <span class="text-xs text-gray-400">ج.م</span></span>
-                        <button onclick="addToCart('نصف بطة مع ملوخية وأرز', 311, this)" class="bg-ak-gold text-white px-4 py-1.5 rounded-xl font-bold text-xs shadow hover:scale-105 transition">أضف</button>
-                    </div>
+                    <p class="text-gray-500 text-xs mb-3">وجبة متكاملة: نصف بطة، ملوخية الطشة وأرز أبيض مفلفل.</p>
+                </div>
+                <div class="flex justify-between items-center pt-2 border-t border-gray-100">
+                    <span class="text-xl font-extrabold text-ak-gold">311 <span class="text-xs text-gray-400">ج.م</span></span>
+                    <button onclick="addToCart('نصف بطة مع ملوخية وأرز', 311, this)" class="bg-ak-gold text-white px-5 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-cart-plus"></i> أضف
+                    </button>
                 </div>
             </div>
 
-            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm" data-category="mains">
-                <img src="https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?q=80&w=600&auto=format&fit=crop" class="w-full h-40 object-cover">
-                <div class="p-3">
+            <div class="menu-item bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between" data-category="mains">
+                <div>
                     <h2 class="text-base font-bold text-ak-dark mb-1">مكس جريل أبو خالد</h2>
-                    <p class="text-gray-500 text-xs mb-2">كباب، كفتة، شيش طاووق، وكبده مع أرز بسمتي.</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-xl font-extrabold text-ak-gold">499 <span class="text-xs text-gray-400">ج.م</span></span>
-                        <button onclick="addToCart('مكس جريل أبو خالد', 499, this)" class="bg-ak-gold text-white px-4 py-1.5 rounded-xl font-bold text-xs shadow hover:scale-105 transition">أضف</button>
-                    </div>
+                    <p class="text-gray-500 text-xs mb-3">كباب، كفتة، شيش طاووق، وكبده مع أرز بسمتي.</p>
+                </div>
+                <div class="flex justify-between items-center pt-2 border-t border-gray-100">
+                    <span class="text-xl font-extrabold text-ak-gold">499 <span class="text-xs text-gray-400">ج.م</span></span>
+                    <button onclick="addToCart('مكس جريل أبو خالد', 499, this)" class="bg-ak-gold text-white px-5 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-cart-plus"></i> أضف
+                    </button>
                 </div>
             </div>
 
             <!-- طواجن -->
-            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm" data-category="tagine">
-                <img src="https://images.unsplash.com/photo-1541529086526-db283c563270?q=80&w=600&auto=format&fit=crop" class="w-full h-40 object-cover">
-                <div class="p-3">
+            <div class="menu-item bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between" data-category="tagine">
+                <div>
                     <h2 class="text-base font-bold text-ak-dark mb-1">طاجن عكاوي</h2>
-                    <p class="text-gray-500 text-xs mb-2">عكاوي مطهية في الفرن بالطريقة البلدي مع البصل والخضار.</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-xl font-extrabold text-ak-gold">433 <span class="text-xs text-gray-400">ج.م</span></span>
-                        <button onclick="addToCart('طاجن عكاوي', 433, this)" class="bg-ak-gold text-white px-4 py-1.5 rounded-xl font-bold text-xs shadow hover:scale-105 transition">أضف</button>
-                    </div>
+                    <p class="text-gray-500 text-xs mb-3">عكاوي مطهية في الفرن بالطريقة البلدي مع البصل والخضار.</p>
+                </div>
+                <div class="flex justify-between items-center pt-2 border-t border-gray-100">
+                    <span class="text-xl font-extrabold text-ak-gold">433 <span class="text-xs text-gray-400">ج.م</span></span>
+                    <button onclick="addToCart('طاجن عكاوي', 433, this)" class="bg-ak-gold text-white px-5 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-cart-plus"></i> أضف
+                    </button>
                 </div>
             </div>
 
-            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm" data-category="tagine">
-                <img src="https://images.unsplash.com/photo-1574484284002-712d9c44429c?q=80&w=600&auto=format&fit=crop" class="w-full h-40 object-cover">
-                <div class="p-3">
+            <div class="menu-item bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between" data-category="tagine">
+                <div>
                     <h2 class="text-base font-bold text-ak-dark mb-1">طاجن كباب حله مع أرز + خبز</h2>
-                    <p class="text-gray-500 text-xs mb-2">لحم طري بصوص البصل الكراميل الشهي.</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-xl font-extrabold text-ak-gold">272 <span class="text-xs text-gray-400">ج.م</span></span>
-                        <button onclick="addToCart('طاجن كباب حله', 272, this)" class="bg-ak-gold text-white px-4 py-1.5 rounded-xl font-bold text-xs shadow hover:scale-105 transition">أضف</button>
-                    </div>
+                    <p class="text-gray-500 text-xs mb-3">لحم طري بصوص البصل الكراميل الشهي.</p>
+                </div>
+                <div class="flex justify-between items-center pt-2 border-t border-gray-100">
+                    <span class="text-xl font-extrabold text-ak-gold">272 <span class="text-xs text-gray-400">ج.م</span></span>
+                    <button onclick="addToCart('طاجن كباب حله', 272, this)" class="bg-ak-gold text-white px-5 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-cart-plus"></i> أضف
+                    </button>
                 </div>
             </div>
 
             <!-- محاشي ومعجنات -->
-            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm" data-category="mahshi">
-                <img src="https://images.unsplash.com/photo-1541529086526-db283c563270?q=80&w=600&auto=format&fit=crop" class="w-full h-40 object-cover">
-                <div class="p-3">
+            <div class="menu-item bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between" data-category="mahshi">
+                <div>
                     <h2 class="text-base font-bold text-ak-dark mb-1">سرفيس محاشي بالكوارع</h2>
-                    <p class="text-gray-500 text-xs mb-2">ورق عنب، كرنب، ممبار، سمبوسه، وكبيبة مع كوارع.</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-xl font-extrabold text-ak-gold">1184 <span class="text-xs text-gray-400">ج.م</span></span>
-                        <button onclick="addToCart('سرفيس محاشي بالكوارع', 1184, this)" class="bg-ak-gold text-white px-4 py-1.5 rounded-xl font-bold text-xs shadow hover:scale-105 transition">أضف</button>
-                    </div>
+                    <p class="text-gray-500 text-xs mb-3">ورق عنب، كرنب، ممبار، سمبوسه، وكبيبة مع كوارع.</p>
+                </div>
+                <div class="flex justify-between items-center pt-2 border-t border-gray-100">
+                    <span class="text-xl font-extrabold text-ak-gold">1184 <span class="text-xs text-gray-400">ج.م</span></span>
+                    <button onclick="addToCart('سرفيس محاشي بالكوارع', 1184, this)" class="bg-ak-gold text-white px-5 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-cart-plus"></i> أضف
+                    </button>
                 </div>
             </div>
 
-            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm" data-category="mahshi">
-                <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?q=80&w=600&auto=format&fit=crop" class="w-full h-40 object-cover">
-                <div class="p-3">
+            <div class="menu-item bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between" data-category="mahshi">
+                <div>
                     <h2 class="text-base font-bold text-ak-dark mb-1">ورق عنب بالكوارع مع الشوربة</h2>
-                    <p class="text-gray-500 text-xs mb-2">أصابع ورق عنب مذابة مع قطع كوارع غنية.</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-xl font-extrabold text-ak-gold">336 <span class="text-xs text-gray-400">ج.م</span></span>
-                        <button onclick="addToCart('ورق عنب بالكوارع', 336, this)" class="bg-ak-gold text-white px-4 py-1.5 rounded-xl font-bold text-xs shadow hover:scale-105 transition">أضف</button>
-                    </div>
+                    <p class="text-gray-500 text-xs mb-3">أصابع ورق عنب مذابة مع قطع كوارع غنية.</p>
+                </div>
+                <div class="flex justify-between items-center pt-2 border-t border-gray-100">
+                    <span class="text-xl font-extrabold text-ak-gold">336 <span class="text-xs text-gray-400">ج.م</span></span>
+                    <button onclick="addToCart('ورق عنب بالكوارع', 336, this)" class="bg-ak-gold text-white px-5 py-2 rounded-xl font-bold text-xs shadow hover:scale-105 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-cart-plus"></i> أضف
+                    </button>
                 </div>
             </div>
 
@@ -170,9 +178,9 @@
                 <i class="fa-solid fa-cart-shopping mb-1 text-xl text-gray-700 group-hover:text-ak-gold transition"></i>
                 <span class="text-[11px] font-bold mt-1 text-gray-700 group-hover:text-ak-gold transition">طلباتي</span>
             </button>
-            <a href="#" class="flex flex-col items-center text-gray-400 hover:text-ak-gold transition">
-                <i class="fa-solid fa-location-dot mb-1 text-xl"></i>
-                <span class="text-[11px] font-bold mt-1">الفروع</span>
+            <a href="https://wa.me/201222200506?text=أهلاً%20مطعنم%20أبو%20خالد،%20أستفسر%20عن..." target="_blank" class="flex flex-col items-center text-gray-400 hover:text-ak-gold transition">
+                <i class="fa-brands fa-whatsapp mb-1 text-xl text-green-600"></i>
+                <span class="text-[11px] font-bold mt-1 text-gray-700">تواصل واتساب</span>
             </a>
         </nav>
 
@@ -180,8 +188,7 @@
 
     <script>
         let cart = [];
-        // رقم الواتساب الحقيقي للفرع
-        const whatsappNumber = "201222200506"; 
+        const whatsappNumber = "201222200506"; // رقم الواتساب المباشر
 
         function filterCategory(category, button) {
             document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -194,7 +201,7 @@
             let items = document.querySelectorAll('.menu-item');
             items.forEach(item => {
                 if (category === 'all' || item.getAttribute('data-category') === category) {
-                    item.style.display = 'block';
+                    item.style.display = 'flex';
                 } else {
                     item.style.display = 'none';
                 }
