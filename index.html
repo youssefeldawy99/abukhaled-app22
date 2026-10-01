@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أبو خالد للمشويات</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -14,9 +13,9 @@
             theme: {
                 extend: { 
                     colors: { 
-                        'ak-bg': '#Faf9f6', /* لون أوف وايت فخم للخلفية */
-                        'ak-gold': '#B8860B', /* ذهبي هادي وراقي */
-                        'ak-dark': '#1a1a1a', /* رمادي غامق جداً للكتابة */
+                        'ak-bg': '#F8F9FA', /* أوف وايت فخم وناعم */
+                        'ak-gold': '#C5A059', /* ذهبي راقي متناسق مع اللوجو */
+                        'ak-dark': '#1a1a1a', 
                     }
                 }
             }
@@ -35,79 +34,150 @@
 
     <div class="w-full max-w-md bg-ak-bg text-ak-dark min-h-screen relative shadow-2xl pb-24 border-x border-gray-200">
 
-        <!-- الهيدر -->
+        <!-- الهيدر واللوجو -->
         <header class="flex justify-between items-center p-4 bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
             <div class="font-bold text-ak-gold flex items-center">
-                <!-- مكان اللوجو: حط رابط صورة اللوجو مكان الرابط اللي بين علامتين التنصيص -->
-                <img src="https://ui-avatars.com/api/?name=أبو+خالد&background=B8860B&color=fff&rounded=true" alt="لوجو أبو خالد" class="h-10 w-10 ml-2 rounded-full shadow-sm">
-                <span class="text-lg text-ak-dark">أبو خالد</span>
+                <!-- ربطنا اللوجو باسم الصورة اللي هترفعها -->
+                <img src="ممم.jpg" alt="لوجو أبو خالد" class="h-10 w-10 ml-2 rounded-full border border-gray-100 shadow-sm object-cover">
+                <span class="text-lg text-ak-dark font-extrabold">أبو خالد</span>
             </div>
-            <a href="tel:15000" class="bg-ak-gold text-white px-4 py-1.5 rounded-full font-bold text-sm shadow-md hover:bg-yellow-600 transition">
-                اتصل بفرعك
+            <a href="tel:15000" class="bg-ak-gold text-white px-5 py-1.5 rounded-full font-bold text-sm shadow-md hover:bg-yellow-600 transition flex items-center gap-2">
+                <i class="fa-solid fa-phone"></i> الخط الساخن
             </a>
         </header>
 
         <!-- شريط الأقسام -->
-        <nav class="flex overflow-x-auto hide-scrollbar gap-3 p-4 whitespace-nowrap bg-ak-bg">
+        <nav class="flex overflow-x-auto hide-scrollbar gap-3 p-4 whitespace-nowrap bg-ak-bg sticky top-[73px] z-30">
             <button class="bg-ak-gold text-white px-6 py-2 rounded-full font-bold text-sm shadow-md">عروض العائلة</button>
-            <button class="bg-white text-ak-dark px-6 py-2 rounded-full font-medium text-sm border border-gray-200 shadow-sm">المشويات</button>
-            <button class="bg-white text-ak-dark px-6 py-2 rounded-full font-medium text-sm border border-gray-200 shadow-sm">الطواجن</button>
+            <button class="bg-white text-gray-600 px-6 py-2 rounded-full font-medium text-sm border border-gray-200 shadow-sm">المشويات</button>
+            <button class="bg-white text-gray-600 px-6 py-2 rounded-full font-medium text-sm border border-gray-200 shadow-sm">الطواجن</button>
+            <button class="bg-white text-gray-600 px-6 py-2 rounded-full font-medium text-sm border border-gray-200 shadow-sm">حواوشي</button>
         </nav>
 
-        <!-- المنيو (هنا بنضيف الأصناف) -->
+        <!-- المنيو الكامل -->
         <main class="p-4 grid grid-cols-1 gap-5">
             
-            <!-- الصنف الأول -->
+            <!-- صينية التوفير -->
             <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md relative">
-                <span class="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-md z-10 shadow-sm">خصم خاص</span>
-                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=600&auto=format&fit=crop" alt="صينية عائلية" class="w-full h-48 object-cover">
+                <span class="absolute top-3 right-3 bg-red-600 text-white text-[11px] font-bold px-2 py-1 rounded-md z-10 shadow-sm">الأكثر طلباً</span>
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=600&auto=format&fit=crop" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-lg font-bold text-ak-dark mb-1">صينية التوفير (4 أفراد)</h2>
+                    <p class="text-gray-500 text-sm mb-3">فرخة شواية، نص كفتة، ممبار، محاشي مشكلة، مع أرز بسمتي وسلطات.</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-2xl font-extrabold text-ak-gold">1450</span>
+                            <span class="text-xs text-gray-400 font-bold">ج.م</span>
+                        </div>
+                        <button onclick="addToCart('صينية التوفير', 1450, this)" class="bg-ak-gold text-white px-6 py-2 rounded-xl font-bold text-sm flex items-center gap-2 shadow-md hover:scale-105 transition">
+                            <i class="fa-solid fa-cart-plus"></i> <span>أضف</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- صينية لمة العيلة -->
+            <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md">
+                <img src="https://images.unsplash.com/photo-1544025162-8111142154ea?q=80&w=600&auto=format&fit=crop" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h2 class="text-lg font-bold text-ak-dark mb-1">صينية لمة العيلة (6 أفراد)</h2>
-                    <p class="text-gray-500 text-sm mb-3">نصف بطة، فرخة شيش، كفتة، ممبار، نيفة وحمام مع أرز بسمتي.</p>
+                    <p class="text-gray-500 text-sm mb-3">نصف بطة، فرخة شيش، كفتة، طرب، نيفة وحمام مع أرز بسمتي.</p>
                     <div class="flex justify-between items-center">
                         <div>
-                            <span class="text-2xl font-bold text-ak-gold">3222</span>
-                            <span class="text-xs text-gray-500">ج.م</span>
+                            <span class="text-2xl font-extrabold text-ak-gold">3222</span>
+                            <span class="text-xs text-gray-400 font-bold">ج.م</span>
                         </div>
-                        <button onclick="addToCart('صينية لمة العيلة', 3222, this)" class="bg-ak-gold text-white px-5 py-2 rounded-xl font-bold text-sm flex items-center gap-2 shadow-md hover:bg-yellow-600 transition">
-                            <i class="fa-solid fa-cart-shopping"></i> <span>أضف</span>
+                        <button onclick="addToCart('صينية لمة العيلة', 3222, this)" class="bg-ak-gold text-white px-6 py-2 rounded-xl font-bold text-sm flex items-center gap-2 shadow-md hover:scale-105 transition">
+                            <i class="fa-solid fa-cart-plus"></i> <span>أضف</span>
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- الصنف التاني -->
+            <!-- كيلو كباب وكفتة -->
             <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md">
-                <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?q=80&w=600&auto=format&fit=crop" alt="مشكل ضاني" class="w-full h-48 object-cover">
+                <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?q=80&w=600&auto=format&fit=crop" class="w-full h-48 object-cover">
                 <div class="p-4">
-                    <h2 class="text-lg font-bold text-ak-dark mb-1">ربع كيلو مشكل ضاني</h2>
-                    <p class="text-gray-500 text-sm mb-3">ربع كيلو مشكل (كفتة وكباب ضاني) على الفحم مع السلطات.</p>
+                    <h2 class="text-lg font-bold text-ak-dark mb-1">كيلو كباب وكفتة ضاني</h2>
+                    <p class="text-gray-500 text-sm mb-3">مشوي على الفحم بتتبيلة أبو خالد السرية، يقدم مع عيش وسلطات.</p>
                     <div class="flex justify-between items-center">
                         <div>
-                            <span class="text-2xl font-bold text-ak-gold">269</span>
-                            <span class="text-xs text-gray-500">ج.م</span>
+                            <span class="text-2xl font-extrabold text-ak-gold">950</span>
+                            <span class="text-xs text-gray-400 font-bold">ج.م</span>
                         </div>
-                        <button onclick="addToCart('ربع كيلو مشكل ضاني', 269, this)" class="bg-ak-gold text-white px-5 py-2 rounded-xl font-bold text-sm flex items-center gap-2 shadow-md hover:bg-yellow-600 transition">
-                            <i class="fa-solid fa-cart-shopping"></i> <span>أضف</span>
+                        <button onclick="addToCart('كيلو كباب وكفتة', 950, this)" class="bg-ak-gold text-white px-6 py-2 rounded-xl font-bold text-sm flex items-center gap-2 shadow-md hover:scale-105 transition">
+                            <i class="fa-solid fa-cart-plus"></i> <span>أضف</span>
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- عشان تضيف صنف جديد: انسخ من أول كلمة (الصنف التاني) لحد هنا، واعمله لصق تحت وغير الاسم والسعر -->
+            <!-- نص طرب -->
+            <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md">
+                <img src="https://images.unsplash.com/photo-1599598425947-330026296906?q=80&w=600&auto=format&fit=crop" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-lg font-bold text-ak-dark mb-1">نصف كيلو طرب ضاني</h2>
+                    <p class="text-gray-500 text-sm mb-3">طرب بلدي دسم ومشوي على الفحم.</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-2xl font-extrabold text-ak-gold">450</span>
+                            <span class="text-xs text-gray-400 font-bold">ج.م</span>
+                        </div>
+                        <button onclick="addToCart('نصف كيلو طرب', 450, this)" class="bg-ak-gold text-white px-6 py-2 rounded-xl font-bold text-sm flex items-center gap-2 shadow-md hover:scale-105 transition">
+                            <i class="fa-solid fa-cart-plus"></i> <span>أضف</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- فراخ عالفحم -->
+            <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md">
+                <img src="https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?q=80&w=600&auto=format&fit=crop" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-lg font-bold text-ak-dark mb-1">دجاجة كاملة على الفحم</h2>
+                    <p class="text-gray-500 text-sm mb-3">دجاجة طازجة متبلة ومشوية، تقدم مع ثومية وبطاطس.</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-2xl font-extrabold text-ak-gold">280</span>
+                            <span class="text-xs text-gray-400 font-bold">ج.م</span>
+                        </div>
+                        <button onclick="addToCart('دجاجة عالفحم', 280, this)" class="bg-ak-gold text-white px-6 py-2 rounded-xl font-bold text-sm flex items-center gap-2 shadow-md hover:scale-105 transition">
+                            <i class="fa-solid fa-cart-plus"></i> <span>أضف</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- حواوشي -->
+            <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md">
+                <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=600&auto=format&fit=crop" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-lg font-bold text-ak-dark mb-1">حواوشي لحمة بلدي</h2>
+                    <p class="text-gray-500 text-sm mb-3">رغيف حواوشي بلدي مقرمش باللحمة المفرومة والتوابل.</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-2xl font-extrabold text-ak-gold">85</span>
+                            <span class="text-xs text-gray-400 font-bold">ج.م</span>
+                        </div>
+                        <button onclick="addToCart('حواوشي لحمة بلدي', 85, this)" class="bg-ak-gold text-white px-6 py-2 rounded-xl font-bold text-sm flex items-center gap-2 shadow-md hover:scale-105 transition">
+                            <i class="fa-solid fa-cart-plus"></i> <span>أضف</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
         </main>
 
         <!-- شريط التنقل السفلي -->
-        <nav class="absolute bottom-0 w-full max-w-md bg-white border-t border-gray-200 flex justify-around items-center p-3 z-50 pb-5 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+        <nav class="absolute bottom-0 w-full max-w-md bg-white border-t border-gray-200 flex justify-around items-center p-3 z-50 pb-5 shadow-[0_-10px_15px_-3px_rgba(0,0,0,0.05)] rounded-t-3xl">
             <a href="#" class="flex flex-col items-center text-ak-gold">
                 <i class="fa-solid fa-house mb-1 text-xl"></i>
                 <span class="text-[11px] font-bold mt-1">الرئيسية</span>
             </a>
-            <button onclick="sendOrderWhatsApp()" class="flex flex-col items-center text-gray-400 hover:text-ak-gold transition relative">
-                <span id="cart-count" class="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden shadow-sm">0</span>
-                <i class="fa-solid fa-cart-shopping mb-1 text-xl text-gray-700"></i>
-                <span class="text-[11px] font-bold mt-1 text-gray-700">طلباتي</span>
+            <button onclick="sendOrderWhatsApp()" class="flex flex-col items-center text-gray-400 hover:text-ak-gold transition relative group">
+                <span id="cart-count" class="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden shadow-sm group-hover:scale-110 transition">0</span>
+                <i class="fa-solid fa-cart-shopping mb-1 text-xl text-gray-700 group-hover:text-ak-gold transition"></i>
+                <span class="text-[11px] font-bold mt-1 text-gray-700 group-hover:text-ak-gold transition">طلباتي</span>
             </button>
             <a href="#" class="flex flex-col items-center text-gray-400 hover:text-ak-gold transition">
                 <i class="fa-solid fa-location-dot mb-1 text-xl"></i>
@@ -117,20 +187,21 @@
 
     </div>
 
-    <!-- برمجة سلة الطلبات والواتساب -->
     <script>
         let cart = [];
-        const whatsappNumber = "201000000000"; // رقم الواتساب
+        // حط رقم واتساب الفرع هنا (زايد أو أكتوبر)
+        const whatsappNumber = "201000000000"; 
 
         function addToCart(itemName, itemPrice, button) {
             cart.push({ name: itemName, price: itemPrice });
+            
             let cartCountBadge = document.getElementById('cart-count');
             cartCountBadge.innerText = cart.length;
             cartCountBadge.classList.remove('hidden');
             
             let originalText = button.innerHTML;
             button.classList.add('added-to-cart');
-            button.innerHTML = '<i class="fa-solid fa-check"></i> <span>تم</span>';
+            button.innerHTML = '<i class="fa-solid fa-check"></i> <span>تم الإضافة</span>';
             
             setTimeout(() => {
                 button.classList.remove('added-to-cart');
@@ -140,7 +211,7 @@
 
         function sendOrderWhatsApp() {
             if(cart.length === 0) {
-                alert("السلة فارغة، اختار أكل الأول يا فندم!");
+                alert("السلة فارغة، اختار أكل الأول يا فندم عشان تظبط الأوردر!");
                 return;
             }
             
@@ -152,7 +223,7 @@
                 total += item.price;
             });
             
-            message += `\nالإجمالي: ${total} ج.م\n`;
+            message += `\nالإجمالي: *${total} ج.م*\n`;
             message += "\nالتوصيل لعنوان: ";
             
             let encodedMessage = encodeURIComponent(message);
