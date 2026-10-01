@@ -13,8 +13,8 @@
             theme: {
                 extend: { 
                     colors: { 
-                        'ak-bg': '#F8F9FA', /* أوف وايت فخم وناعم */
-                        'ak-gold': '#C5A059', /* ذهبي راقي متناسق مع اللوجو */
+                        'ak-bg': '#F8F9FA',
+                        'ak-gold': '#C5A059',
                         'ak-dark': '#1a1a1a', 
                     }
                 }
@@ -37,8 +37,7 @@
         <!-- الهيدر واللوجو -->
         <header class="flex justify-between items-center p-4 bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
             <div class="font-bold text-ak-gold flex items-center">
-                <!-- ربطنا اللوجو باسم الصورة اللي هترفعها -->
-                <img src="ممم.jpg" alt="لوجو أبو خالد" class="h-10 w-10 ml-2 rounded-full border border-gray-100 shadow-sm object-cover">
+                <img src="AK Logo.jpg" alt="لوجو أبو خالد" class="h-10 w-10 ml-2 rounded-full border border-gray-100 shadow-sm object-cover">
                 <span class="text-lg text-ak-dark font-extrabold">أبو خالد</span>
             </div>
             <a href="tel:15000" class="bg-ak-gold text-white px-5 py-1.5 rounded-full font-bold text-sm shadow-md hover:bg-yellow-600 transition flex items-center gap-2">
@@ -189,8 +188,7 @@
 
     <script>
         let cart = [];
-        // حط رقم واتساب الفرع هنا (زايد أو أكتوبر)
-        const whatsappNumber = "201000000000"; 
+        const whatsappNumber = "201000000000"; // رقم الواتساب
 
         function addToCart(itemName, itemPrice, button) {
             cart.push({ name: itemName, price: itemPrice });
