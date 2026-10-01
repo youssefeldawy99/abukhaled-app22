@@ -59,7 +59,7 @@
             
             <!-- مشويات -->
             <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm" data-category="grills">
-                <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?q=80&w=600&auto=format&fit=crop" class="w-full h-40 object-cover">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=600&auto=format&fit=crop" class="w-full h-40 object-cover">
                 <div class="p-3">
                     <h2 class="text-base font-bold text-ak-dark mb-1">كيلو كباب ضاني</h2>
                     <p class="text-gray-500 text-xs mb-2">لحم ضاني بلدي مشوي على الفحم بتتبيلة أبو خالد الخاصة.</p>
@@ -84,7 +84,7 @@
 
             <!-- أطباق رئيسية -->
             <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm" data-category="mains">
-                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=600&auto=format&fit=crop" class="w-full h-40 object-cover">
+                <img src="https://images.unsplash.com/photo-1518492104633-130d0cc84637?q=80&w=600&auto=format&fit=crop" class="w-full h-40 object-cover">
                 <div class="p-3">
                     <h2 class="text-base font-bold text-ak-dark mb-1">نصف بطة + ملوخية + أرز أبيض</h2>
                     <p class="text-gray-500 text-xs mb-2">وجبة متكاملة: نصف بطة، ملوخية الطشة وأرز أبيض مفلفل.</p>
@@ -180,10 +180,10 @@
 
     <script>
         let cart = [];
-        const whatsappNumber = "201000000000"; // حط رقم واتساب الفرع هنا
+        // رقم الواتساب الحقيقي للفرع
+        const whatsappNumber = "201222200506"; 
 
         function filterCategory(category, button) {
-            // تغيير شكل الأزرار النشطة
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.classList.remove('bg-ak-gold', 'text-white', 'font-bold');
                 btn.classList.add('bg-white', 'text-gray-700', 'font-medium');
@@ -191,7 +191,6 @@
             button.classList.remove('bg-white', 'text-gray-700', 'font-medium');
             button.classList.add('bg-ak-gold', 'text-white', 'font-bold');
 
-            // إظهار وإخفاء الكروت حسب القسم
             let items = document.querySelectorAll('.menu-item');
             items.forEach(item => {
                 if (category === 'all' || item.getAttribute('data-category') === category) {
