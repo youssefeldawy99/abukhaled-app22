@@ -103,7 +103,7 @@
                     { cat: 'sandwiches', name: 'سندوتش كبدة ضاني كبير', price: 143, img: 'fajita.jpg' },
                     { cat: 'sandwiches', name: 'سندوتش شاورما لحمة كبير', price: 125, img: 'fajita.jpg' },
                     { cat: 'sandwiches', name: 'سندوتش شاورما فراخ كبير', price: 103, img: 'fajita.jpg' },
-                    { cat: 'sandwiches', name: 'سندوتش شي طاووق كبير', price: 100, img: 'fajita.jpg' },
+                    { cat: 'sandwiches', name: 'سندوتش شيش طاووق كبير', price: 100, img: 'fajita.jpg' },
                     { cat: 'sandwiches', name: 'سندوتش برجر ساده', price: 97, img: 'fajita.jpg' },
 
                     // الشوربة والسلطات
@@ -201,7 +201,6 @@
                 <a href="https://www.facebook.com/abu.khaled.restaurant.eg" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center text-xl shadow-md hover:scale-110 transition"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/abu_khaled_restaurant" target="_blank" class="w-12 h-12 rounded-full bg-pink-600 text-white flex items-center justify-center text-xl shadow-md hover:scale-110 transition"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://wa.me/201222200506" target="_blank" class="w-12 h-12 rounded-full bg-flaky-green text-white flex items-center justify-center text-xl shadow-md hover:scale-110 transition"><i class="fa-brands fa-whatsapp"></i></a>
-                <!-- تم تغيير لون أيقونة الويب عشان تظهر واضحة -->
                 <a href="https://www.abukhaled-grill.com" target="_blank" class="w-12 h-12 rounded-full bg-gray-800 text-white flex items-center justify-center text-xl shadow-md hover:scale-110 transition"><i class="fa-solid fa-globe"></i></a>
             </div>
 
@@ -214,7 +213,8 @@
 
     <!-- البرمجة -->
     <script>
-        const whatsappNumber = "201222200506"; 
+        // رقم الواتساب المخصص لطلبات الأصناف فقط
+        const whatsappNumber = "201145001175"; 
 
         // برمجة سحب التابات بالماوس على الكمبيوتر
         const slider = document.getElementById('tabs-container');
@@ -240,7 +240,7 @@
             if (!isDown) return;
             e.preventDefault();
             const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 2; // سرعة السحب
+            const walk = (x - startX) * 2; 
             slider.scrollLeft = scrollLeft - walk;
         });
 
