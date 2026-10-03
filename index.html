@@ -4,415 +4,189 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سلسلة مطاعم أبوخالد للمشويات</title>
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <script>
         tailwind.config = {
             theme: {
                 extend: { 
                     colors: { 
-                        'ak-bg': '#F9F8F6',
+                        'ak-bg': '#F4F6F8',
                         'ak-gold': '#C5A059',
-                        'ak-dark': '#1a1a1a', 
                         'flaky-green': '#25D366'
                     }
                 }
             }
         }
     </script>
-    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
         body { font-family: 'Tajawal', sans-serif; background-color: #e5e7eb; }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.7); }
     </style>
 </head>
 <body class="flex justify-center items-start min-h-screen">
 
-    <div class="w-full max-w-md bg-ak-bg text-ak-dark min-h-screen relative shadow-2xl pb-10 border-x border-gray-200">
+    <div class="w-full max-w-md bg-white min-h-screen relative shadow-2xl pb-10">
 
-        <!-- الهيدر -->
-        <header class="flex justify-between items-center p-4 bg-white sticky top-0 z-50 shadow-sm">
-            <div class="font-bold text-ak-gold flex items-center">
-                <img src="ak-logo.jpg" alt="لوجو أبو خالد" class="h-10 w-10 ml-2 rounded-full border border-gray-100 shadow-sm object-cover" onerror="this.src='https://ui-avatars.com/api/?name=أبو+خالد&background=C5A059&color=fff&rounded=true'">
-            </div>
-            <a href="tel:01222200506" class="bg-ak-gold text-white px-4 py-1.5 rounded-full font-bold text-xs shadow-md hover:bg-yellow-600 transition flex items-center gap-1.5">
-                <i class="fa-solid fa-phone"></i> 01222200506
-            </a>
+        <!-- الهيدر (لوجو في النص بدون رقم) -->
+        <header class="flex justify-center items-center py-3 bg-white sticky top-0 z-50 shadow-sm">
+            <img src="ak-logo.jpg" alt="لوجو أبو خالد" class="h-12 object-contain" onerror="this.src='https://ui-avatars.com/api/?name=AK&background=C5A059&color=fff'">
         </header>
 
         <!-- الكوفر والسلوجان -->
         <div class="relative w-full h-48 bg-gray-900">
-            <img src="mix-grill.jpg" class="w-full h-full object-cover opacity-50" onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=600&auto=format&fit=crop'">
+            <img src="mix-grill.jpg" class="w-full h-full object-cover opacity-60" onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=600'">
             <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
-                <h1 class="text-3xl font-black mb-2 text-shadow">سلسلة مطاعم أبوخالد للمشويات</h1>
-                <p class="text-lg font-bold text-ak-gold text-shadow bg-black/40 px-4 py-1 rounded-full">أكلة حلوة لكل لمة حلوة</p>
+                <h1 class="text-2xl font-black mb-2 drop-shadow-md">سلسلة مطاعم أبوخالد للمشويات</h1>
+                <p class="text-sm font-bold text-ak-gold drop-shadow-md">أكلة حلوة لكل لمة حلوة</p>
             </div>
         </div>
 
         <!-- شريط الأقسام -->
-        <nav class="flex overflow-x-auto hide-scrollbar gap-2 p-3 whitespace-nowrap bg-white sticky top-[72px] z-40 border-b border-gray-200 shadow-sm">
-            <button onclick="filterCategory('all', this)" class="tab-btn bg-ak-gold text-white px-5 py-2 rounded-full font-bold text-sm shadow-sm transition">الكل</button>
-            <button onclick="filterCategory('grills', this)" class="tab-btn bg-gray-100 text-gray-700 px-5 py-2 rounded-full font-bold text-sm transition">المشويات</button>
-            <button onclick="filterCategory('mains', this)" class="tab-btn bg-gray-100 text-gray-700 px-5 py-2 rounded-full font-bold text-sm transition">أطباق رئيسية</button>
-            <button onclick="filterCategory('tagines', this)" class="tab-btn bg-gray-100 text-gray-700 px-5 py-2 rounded-full font-bold text-sm transition">الطواجن</button>
-            <button onclick="filterCategory('mahshi', this)" class="tab-btn bg-gray-100 text-gray-700 px-5 py-2 rounded-full font-bold text-sm transition">المحاشي</button>
-            <button onclick="filterCategory('sandwiches', this)" class="tab-btn bg-gray-100 text-gray-700 px-5 py-2 rounded-full font-bold text-sm transition">السندوتشات</button>
-            <button onclick="filterCategory('soups', this)" class="tab-btn bg-gray-100 text-gray-700 px-5 py-2 rounded-full font-bold text-sm transition">الشوربة والسلطات</button>
+        <nav class="flex overflow-x-auto hide-scrollbar gap-2 p-3 whitespace-nowrap bg-gray-50 sticky top-[72px] z-40 border-b border-gray-200 shadow-sm">
+            <button onclick="filterCategory('all', this)" class="tab-btn bg-ak-gold text-white px-5 py-2 rounded-full font-bold text-sm transition">الكل</button>
+            <button onclick="filterCategory('grills', this)" class="tab-btn bg-white text-gray-700 border border-gray-200 px-5 py-2 rounded-full font-bold text-sm transition">المشويات</button>
+            <button onclick="filterCategory('mains', this)" class="tab-btn bg-white text-gray-700 border border-gray-200 px-5 py-2 rounded-full font-bold text-sm transition">أطباق رئيسية</button>
+            <button onclick="filterCategory('tagines', this)" class="tab-btn bg-white text-gray-700 border border-gray-200 px-5 py-2 rounded-full font-bold text-sm transition">الطواجن</button>
+            <button onclick="filterCategory('mahshi', this)" class="tab-btn bg-white text-gray-700 border border-gray-200 px-5 py-2 rounded-full font-bold text-sm transition">المحاشي</button>
+            <button onclick="filterCategory('sandwiches', this)" class="tab-btn bg-white text-gray-700 border border-gray-200 px-5 py-2 rounded-full font-bold text-sm transition">السندوتشات</button>
+            <button onclick="filterCategory('soups', this)" class="tab-btn bg-white text-gray-700 border border-gray-200 px-5 py-2 rounded-full font-bold text-sm transition">الشوربة والسلطات</button>
         </nav>
 
-        <!-- المنيو الكامل بستايل فليكي -->
-        <main id="menu-container" class="p-4 grid grid-cols-1 gap-5">
+        <!-- المنيو الكامل -->
+        <main class="p-4 bg-ak-bg grid grid-cols-1 gap-4">
             
             <!-- ================= قسم المشويات ================= -->
-            
-            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md flex flex-col" data-category="grills">
-                <img src="mix-grill.jpg" alt="مشكل ضاني" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h2 class="text-lg font-black text-gray-800">مشكل ضاني أو بتلو - كيلو</h2>
-                    <p class="text-gray-500 text-xs mt-1 mb-3">مشويات مشكلة من أجود أنواع اللحوم الطازجة.</p>
-                    <div class="bg-gray-50 p-3 rounded-xl border border-gray-200">
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="font-bold text-sm text-gray-700"><i class="fa-solid fa-calculator text-ak-gold"></i> حدد الكمية:</span>
-                            <div class="flex items-center gap-3 bg-white border border-gray-300 rounded-lg p-1">
-                                <button onclick="updateQty(this, -1, 1184)" class="w-8 h-8 flex items-center justify-center text-red-500 font-bold text-xl hover:bg-gray-100 rounded">-</button>
-                                <span class="qty-val font-black text-gray-800 w-6 text-center text-lg">1</span>
-                                <button onclick="updateQty(this, 1, 1184)" class="w-8 h-8 flex items-center justify-center text-flaky-green font-bold text-xl hover:bg-gray-100 rounded">+</button>
+            <script>
+                const menuItems = [
+                    // المشويات
+                    { cat: 'grills', name: 'مشكل ضاني أو بتلو - كيلو', price: 1184, img: 'mix-grill.jpg' },
+                    { cat: 'grills', name: 'كباب ضاني أو بتلو - كيلو', price: 1340, img: 'kebab.jpg' },
+                    { cat: 'grills', name: 'ريش ضاني أو بتلو - كيلو', price: 1528, img: 'ribs.jpg' },
+                    { cat: 'grills', name: 'كفتة ضاني - كيلو', price: 1040, img: 'kebab.jpg' },
+                    { cat: 'grills', name: 'سجق مشوي - كيلو', price: 1084, img: 'mix-grill.jpg' },
+                    { cat: 'grills', name: 'طرب - كيلو', price: 1172, img: 'kebab.jpg' },
+                    { cat: 'grills', name: 'شيش طاووق - كيلو', price: 646, img: 'mix-grill.jpg' },
+                    { cat: 'grills', name: 'طبق مشويات أبو خالد - وجبة', price: 499, img: 'mix-grill.jpg' },
+                    { cat: 'grills', name: 'مكس جريل - وجبة', price: 612, img: 'mix-grill.jpg' },
+                    { cat: 'grills', name: 'حمام مشوي على الفحم - جامبو', price: 175, img: 'mix-grill.jpg' },
+                    
+                    // الأطباق الرئيسية
+                    { cat: 'mains', name: 'ستيك مشوي على الفحم', price: 400, img: 'mix-grill.jpg' },
+                    { cat: 'mains', name: 'دجاج بانيه مع البطاطس', price: 246, img: 'duck.jpg' },
+                    { cat: 'mains', name: 'بيكاتا لحم بصوص المشروم والأرز', price: 400, img: 'onion-meat.jpg' },
+                    { cat: 'mains', name: 'بيكاتا فراخ بصوص المشروم والأرز', price: 298, img: 'duck.jpg' },
+                    { cat: 'mains', name: 'اسكالوب بانيه مع بطاطس وخضار سوتيه', price: 400, img: 'mix-grill.jpg' },
+                    { cat: 'mains', name: 'نصف بطة مع أرز وملوخية', price: 350, img: 'duck.jpg' },
+
+                    // الطواجن
+                    { cat: 'tagines', name: 'طاجن لحمة بالبصل مع أرز وخبز', price: 272, img: 'onion-meat.jpg' },
+                    { cat: 'tagines', name: 'طاجن كباب حلة مع أرز وخبز', price: 272, img: 'onion-meat.jpg' },
+                    { cat: 'tagines', name: 'طاجن بامية باللحمة مع أرز وخبز', price: 259, img: 'bamia.jpg' },
+                    { cat: 'tagines', name: 'طاجن بطاطس باللحمة مع أرز وخبز', price: 247, img: 'onion-meat.jpg' },
+                    { cat: 'tagines', name: 'طاجن ملوخية سادة مع أرز وخبز', price: 247, img: 'molokhia.jpg' },
+
+                    // المحاشي
+                    { cat: 'mahshi', name: 'محشي ورق عنب', price: 91, img: 'mahshi.jpg' },
+                    { cat: 'mahshi', name: 'سرفيس محشي مشكل وسط', price: 224, img: 'mahshi.jpg' },
+                    { cat: 'mahshi', name: 'سرفيس محشي مشكل كبير', price: 311, img: 'mahshi.jpg' },
+
+                    // السندوتشات
+                    { cat: 'sandwiches', name: 'سندوتش كباب كبير', price: 170, img: 'fajita.jpg' },
+                    { cat: 'sandwiches', name: 'سندوتش كفتة كبير', price: 128, img: 'fajita.jpg' },
+                    { cat: 'sandwiches', name: 'سندوتش كبدة ضاني كبير', price: 143, img: 'fajita.jpg' },
+                    { cat: 'sandwiches', name: 'سندوتش شاورما لحمة كبير', price: 125, img: 'fajita.jpg' },
+                    { cat: 'sandwiches', name: 'سندوتش شاورما فراخ كبير', price: 103, img: 'fajita.jpg' },
+                    { cat: 'sandwiches', name: 'سندوتش شيش طاووق كبير', price: 100, img: 'fajita.jpg' },
+                    { cat: 'sandwiches', name: 'سندوتش برجر ساده', price: 97, img: 'fajita.jpg' },
+
+                    // الشوربة والسلطات
+                    { cat: 'soups', name: 'شوربة كريمة بالمشروم', price: 80, img: 'soup.png' },
+                    { cat: 'soups', name: 'شوربة حمام بقطع اللحم', price: 90, img: 'soup.png' },
+                    { cat: 'soups', name: 'شوربة كوارع بقطع الكوارع', price: 168, img: 'soup.png' },
+                    { cat: 'soups', name: 'شوربة لسان عصفور', price: 46, img: 'soup.png' },
+                    { cat: 'soups', name: 'سلطات طحينة - خضراء - بابا غنوج - مخلل', price: 32, img: 'soup.png' }
+                ];
+
+                const container = document.currentScript.parentElement;
+                
+                menuItems.forEach((item, index) => {
+                    const cardHTML = `
+                        <div class="menu-item bg-white rounded-2xl shadow-sm border border-gray-100 p-3 mb-2" data-category="${item.cat}">
+                            <div class="flex gap-3">
+                                <img src="${item.img}" class="w-24 h-24 rounded-xl object-cover object-center border border-gray-100" onerror="this.src='https://ui-avatars.com/api/?name=أبو+خالد&background=eee'">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-gray-800 text-sm mb-1">${item.name}</h3>
+                                    <p class="text-xs text-gray-400">سعر الصنف: ${item.price} ج.م</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-gray-200">
-                            <span class="text-xs font-bold text-gray-500">الإجمالي المطلوب:</span>
-                            <span class="total-price text-lg font-black text-flaky-green">1184 ج.م</span>
-                        </div>
-                    </div>
-                    <button onclick="sendWhatsAppOrder('مشكل ضاني أو بتلو - كيلو', 1184, this)" class="mt-3 w-full bg-flaky-green text-white py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md hover:bg-green-600 transition">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> إرسال الطلب
-                    </button>
-                </div>
-            </div>
-
-            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md flex flex-col" data-category="grills">
-                <img src="kebab.jpg" alt="كباب ضاني" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h2 class="text-lg font-black text-gray-800">كباب ضاني أو بتلو - كيلو</h2>
-                    <p class="text-gray-500 text-xs mt-1 mb-3">قطع كباب طرية متبلة ومشوية على الفحم.</p>
-                    <div class="bg-gray-50 p-3 rounded-xl border border-gray-200">
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="font-bold text-sm text-gray-700"><i class="fa-solid fa-calculator text-ak-gold"></i> حدد الكمية:</span>
-                            <div class="flex items-center gap-3 bg-white border border-gray-300 rounded-lg p-1">
-                                <button onclick="updateQty(this, -1, 1340)" class="w-8 h-8 flex items-center justify-center text-red-500 font-bold text-xl hover:bg-gray-100 rounded">-</button>
-                                <span class="qty-val font-black text-gray-800 w-6 text-center text-lg">1</span>
-                                <button onclick="updateQty(this, 1, 1340)" class="w-8 h-8 flex items-center justify-center text-flaky-green font-bold text-xl hover:bg-gray-100 rounded">+</button>
+                            
+                            <div class="mt-3 bg-gray-50 rounded-xl p-3 border border-gray-100">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-bold text-gray-700"><i class="fa-solid fa-calculator text-ak-gold ml-1"></i> حدد الكمية:</span>
+                                    <div class="flex items-center gap-3 bg-white border border-gray-200 rounded-lg p-1">
+                                        <button onclick="updateQty('qty-${index}', -1, ${item.price}, 'total-${index}')" class="w-6 h-6 flex items-center justify-center text-red-500 font-bold hover:bg-gray-100 rounded">-</button>
+                                        <span id="qty-${index}" class="font-bold text-gray-800 w-4 text-center text-sm">1</span>
+                                        <button onclick="updateQty('qty-${index}', 1, ${item.price}, 'total-${index}')" class="w-6 h-6 flex items-center justify-center text-flaky-green font-bold hover:bg-gray-100 rounded">+</button>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center pt-2 border-t border-gray-200">
+                                    <span class="text-xs font-bold text-gray-500">الإجمالي المطلوب:</span>
+                                    <span id="total-${index}" class="text-sm font-black text-flaky-green">${item.price} ج.م</span>
+                                </div>
                             </div>
+                            
+                            <button onclick="sendOrder('${item.name}', 'qty-${index}', ${item.price})" class="mt-2 w-full bg-flaky-green text-white py-2.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-sm hover:bg-green-600 transition">
+                                <i class="fa-brands fa-whatsapp text-lg"></i> إرسال الطلب
+                            </button>
                         </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-gray-200">
-                            <span class="text-xs font-bold text-gray-500">الإجمالي المطلوب:</span>
-                            <span class="total-price text-lg font-black text-flaky-green">1340 ج.م</span>
-                        </div>
-                    </div>
-                    <button onclick="sendWhatsAppOrder('كباب ضاني أو بتلو - كيلو', 1340, this)" class="mt-3 w-full bg-flaky-green text-white py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md hover:bg-green-600 transition">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> إرسال الطلب
-                    </button>
-                </div>
-            </div>
-
-            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md flex flex-col" data-category="grills">
-                <img src="ribs.jpg" alt="ريش ضاني" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h2 class="text-lg font-black text-gray-800">ريش ضاني أو بتلو - كيلو</h2>
-                    <p class="text-gray-500 text-xs mt-1 mb-3">ريش مشوية باحترافية لتذوب في الفم.</p>
-                    <div class="bg-gray-50 p-3 rounded-xl border border-gray-200">
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="font-bold text-sm text-gray-700"><i class="fa-solid fa-calculator text-ak-gold"></i> حدد الكمية:</span>
-                            <div class="flex items-center gap-3 bg-white border border-gray-300 rounded-lg p-1">
-                                <button onclick="updateQty(this, -1, 1528)" class="w-8 h-8 flex items-center justify-center text-red-500 font-bold text-xl hover:bg-gray-100 rounded">-</button>
-                                <span class="qty-val font-black text-gray-800 w-6 text-center text-lg">1</span>
-                                <button onclick="updateQty(this, 1, 1528)" class="w-8 h-8 flex items-center justify-center text-flaky-green font-bold text-xl hover:bg-gray-100 rounded">+</button>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-gray-200">
-                            <span class="text-xs font-bold text-gray-500">الإجمالي المطلوب:</span>
-                            <span class="total-price text-lg font-black text-flaky-green">1528 ج.م</span>
-                        </div>
-                    </div>
-                    <button onclick="sendWhatsAppOrder('ريش ضاني أو بتلو - كيلو', 1528, this)" class="mt-3 w-full bg-flaky-green text-white py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md hover:bg-green-600 transition">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> إرسال الطلب
-                    </button>
-                </div>
-            </div>
-
-            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md flex flex-col" data-category="grills">
-                <img src="kebab.jpg" alt="كفتة ضاني" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h2 class="text-lg font-black text-gray-800">كفتة ضاني - كيلو</h2>
-                    <p class="text-gray-500 text-xs mt-1 mb-3">كفتة الحاتي على أصولها.</p>
-                    <div class="bg-gray-50 p-3 rounded-xl border border-gray-200">
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="font-bold text-sm text-gray-700"><i class="fa-solid fa-calculator text-ak-gold"></i> حدد الكمية:</span>
-                            <div class="flex items-center gap-3 bg-white border border-gray-300 rounded-lg p-1">
-                                <button onclick="updateQty(this, -1, 1040)" class="w-8 h-8 flex items-center justify-center text-red-500 font-bold text-xl hover:bg-gray-100 rounded">-</button>
-                                <span class="qty-val font-black text-gray-800 w-6 text-center text-lg">1</span>
-                                <button onclick="updateQty(this, 1, 1040)" class="w-8 h-8 flex items-center justify-center text-flaky-green font-bold text-xl hover:bg-gray-100 rounded">+</button>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-gray-200">
-                            <span class="text-xs font-bold text-gray-500">الإجمالي المطلوب:</span>
-                            <span class="total-price text-lg font-black text-flaky-green">1040 ج.م</span>
-                        </div>
-                    </div>
-                    <button onclick="sendWhatsAppOrder('كفتة ضاني - كيلو', 1040, this)" class="mt-3 w-full bg-flaky-green text-white py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md hover:bg-green-600 transition">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> إرسال الطلب
-                    </button>
-                </div>
-            </div>
-
-            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md flex flex-col" data-category="grills">
-                <img src="kebab.jpg" alt="سجق وطرب" class="w-full h-48 object-cover opacity-90">
-                <div class="p-4">
-                    <h2 class="text-lg font-black text-gray-800">طرب - كيلو</h2>
-                    <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 mt-2">
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="font-bold text-sm text-gray-700">حدد الكمية:</span>
-                            <div class="flex items-center gap-3 bg-white border border-gray-300 rounded-lg p-1">
-                                <button onclick="updateQty(this, -1, 1172)" class="w-8 h-8 flex items-center justify-center text-red-500 font-bold text-xl">-</button>
-                                <span class="qty-val font-black text-gray-800 w-6 text-center text-lg">1</span>
-                                <button onclick="updateQty(this, 1, 1172)" class="w-8 h-8 flex items-center justify-center text-flaky-green font-bold text-xl">+</button>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-gray-200">
-                            <span class="text-xs font-bold text-gray-500">الإجمالي المطلوب:</span>
-                            <span class="total-price text-lg font-black text-flaky-green">1172 ج.م</span>
-                        </div>
-                    </div>
-                    <button onclick="sendWhatsAppOrder('طرب - كيلو', 1172, this)" class="mt-3 w-full bg-flaky-green text-white py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> إرسال الطلب
-                    </button>
-                </div>
-            </div>
-
-            <!-- ================= قسم الأطباق الرئيسية ================= -->
-
-            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md flex flex-col" data-category="mains">
-                <img src="duck.jpg" alt="نصف بطة" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h2 class="text-lg font-black text-gray-800">نصف بطة مع أرز وملوخية</h2>
-                    <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 mt-2">
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="font-bold text-sm text-gray-700">حدد الكمية:</span>
-                            <div class="flex items-center gap-3 bg-white border border-gray-300 rounded-lg p-1">
-                                <button onclick="updateQty(this, -1, 350)" class="w-8 h-8 flex items-center justify-center text-red-500 font-bold text-xl">-</button>
-                                <span class="qty-val font-black text-gray-800 w-6 text-center text-lg">1</span>
-                                <button onclick="updateQty(this, 1, 350)" class="w-8 h-8 flex items-center justify-center text-flaky-green font-bold text-xl">+</button>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-gray-200">
-                            <span class="text-xs font-bold text-gray-500">الإجمالي المطلوب:</span>
-                            <span class="total-price text-lg font-black text-flaky-green">350 ج.م</span>
-                        </div>
-                    </div>
-                    <button onclick="sendWhatsAppOrder('نصف بطة مع أرز وملوخية', 350, this)" class="mt-3 w-full bg-flaky-green text-white py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> إرسال الطلب
-                    </button>
-                </div>
-            </div>
-
-            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md flex flex-col" data-category="mains">
-                <img src="mix-grill.jpg" alt="ستيك وبيكاتا" class="w-full h-48 object-cover opacity-90">
-                <div class="p-4">
-                    <h2 class="text-lg font-black text-gray-800">ستيك مشوي على الفحم</h2>
-                    <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 mt-2">
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="font-bold text-sm text-gray-700">حدد الكمية:</span>
-                            <div class="flex items-center gap-3 bg-white border border-gray-300 rounded-lg p-1">
-                                <button onclick="updateQty(this, -1, 400)" class="w-8 h-8 flex items-center justify-center text-red-500 font-bold text-xl">-</button>
-                                <span class="qty-val font-black text-gray-800 w-6 text-center text-lg">1</span>
-                                <button onclick="updateQty(this, 1, 400)" class="w-8 h-8 flex items-center justify-center text-flaky-green font-bold text-xl">+</button>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-gray-200">
-                            <span class="text-xs font-bold text-gray-500">الإجمالي المطلوب:</span>
-                            <span class="total-price text-lg font-black text-flaky-green">400 ج.م</span>
-                        </div>
-                    </div>
-                    <button onclick="sendWhatsAppOrder('ستيك مشوي على الفحم', 400, this)" class="mt-3 w-full bg-flaky-green text-white py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> إرسال الطلب
-                    </button>
-                </div>
-            </div>
-
-            <!-- ================= قسم الطواجن ================= -->
-
-            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md flex flex-col" data-category="tagines">
-                <img src="onion-meat.jpg" alt="طاجن لحمة بالبصل" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h2 class="text-lg font-black text-gray-800">طاجن لحمة بالبصل مع أرز وخبز</h2>
-                    <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 mt-2">
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="font-bold text-sm text-gray-700">حدد الكمية:</span>
-                            <div class="flex items-center gap-3 bg-white border border-gray-300 rounded-lg p-1">
-                                <button onclick="updateQty(this, -1, 272)" class="w-8 h-8 flex items-center justify-center text-red-500 font-bold text-xl">-</button>
-                                <span class="qty-val font-black text-gray-800 w-6 text-center text-lg">1</span>
-                                <button onclick="updateQty(this, 1, 272)" class="w-8 h-8 flex items-center justify-center text-flaky-green font-bold text-xl">+</button>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-gray-200">
-                            <span class="text-xs font-bold text-gray-500">الإجمالي المطلوب:</span>
-                            <span class="total-price text-lg font-black text-flaky-green">272 ج.م</span>
-                        </div>
-                    </div>
-                    <button onclick="sendWhatsAppOrder('طاجن لحمة بالبصل مع أرز وخبز', 272, this)" class="mt-3 w-full bg-flaky-green text-white py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> إرسال الطلب
-                    </button>
-                </div>
-            </div>
-
-            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md flex flex-col" data-category="tagines">
-                <img src="bamia.jpg" alt="طاجن بامية" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h2 class="text-lg font-black text-gray-800">طاجن بامية باللحمة مع أرز وخبز</h2>
-                    <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 mt-2">
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="font-bold text-sm text-gray-700">حدد الكمية:</span>
-                            <div class="flex items-center gap-3 bg-white border border-gray-300 rounded-lg p-1">
-                                <button onclick="updateQty(this, -1, 259)" class="w-8 h-8 flex items-center justify-center text-red-500 font-bold text-xl">-</button>
-                                <span class="qty-val font-black text-gray-800 w-6 text-center text-lg">1</span>
-                                <button onclick="updateQty(this, 1, 259)" class="w-8 h-8 flex items-center justify-center text-flaky-green font-bold text-xl">+</button>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-gray-200">
-                            <span class="text-xs font-bold text-gray-500">الإجمالي المطلوب:</span>
-                            <span class="total-price text-lg font-black text-flaky-green">259 ج.م</span>
-                        </div>
-                    </div>
-                    <button onclick="sendWhatsAppOrder('طاجن بامية باللحمة مع أرز وخبز', 259, this)" class="mt-3 w-full bg-flaky-green text-white py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> إرسال الطلب
-                    </button>
-                </div>
-            </div>
-
-            <!-- ================= قسم المحاشي ================= -->
-
-            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md flex flex-col" data-category="mahshi">
-                <img src="mahshi.jpg" alt="محاشي" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h2 class="text-lg font-black text-gray-800">سرفيس محشي مشكل كبير</h2>
-                    <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 mt-2">
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="font-bold text-sm text-gray-700">حدد الكمية:</span>
-                            <div class="flex items-center gap-3 bg-white border border-gray-300 rounded-lg p-1">
-                                <button onclick="updateQty(this, -1, 311)" class="w-8 h-8 flex items-center justify-center text-red-500 font-bold text-xl">-</button>
-                                <span class="qty-val font-black text-gray-800 w-6 text-center text-lg">1</span>
-                                <button onclick="updateQty(this, 1, 311)" class="w-8 h-8 flex items-center justify-center text-flaky-green font-bold text-xl">+</button>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-gray-200">
-                            <span class="text-xs font-bold text-gray-500">الإجمالي المطلوب:</span>
-                            <span class="total-price text-lg font-black text-flaky-green">311 ج.م</span>
-                        </div>
-                    </div>
-                    <button onclick="sendWhatsAppOrder('سرفيس محشي مشكل كبير', 311, this)" class="mt-3 w-full bg-flaky-green text-white py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> إرسال الطلب
-                    </button>
-                </div>
-            </div>
-
-            <!-- ================= السندوتشات ================= -->
-            
-            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md flex flex-col" data-category="sandwiches">
-                <img src="fajita.jpg" alt="سندوتش" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h2 class="text-lg font-black text-gray-800">سندوتش شاورما لحمة كبير</h2>
-                    <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 mt-2">
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="font-bold text-sm text-gray-700">حدد الكمية:</span>
-                            <div class="flex items-center gap-3 bg-white border border-gray-300 rounded-lg p-1">
-                                <button onclick="updateQty(this, -1, 125)" class="w-8 h-8 flex items-center justify-center text-red-500 font-bold text-xl">-</button>
-                                <span class="qty-val font-black text-gray-800 w-6 text-center text-lg">1</span>
-                                <button onclick="updateQty(this, 1, 125)" class="w-8 h-8 flex items-center justify-center text-flaky-green font-bold text-xl">+</button>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-gray-200">
-                            <span class="text-xs font-bold text-gray-500">الإجمالي المطلوب:</span>
-                            <span class="total-price text-lg font-black text-flaky-green">125 ج.م</span>
-                        </div>
-                    </div>
-                    <button onclick="sendWhatsAppOrder('سندوتش شاورما لحمة كبير', 125, this)" class="mt-3 w-full bg-flaky-green text-white py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> إرسال الطلب
-                    </button>
-                </div>
-            </div>
-
-            <!-- ================= الشوربة والسلطات ================= -->
-
-            <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md flex flex-col" data-category="soups">
-                <img src="soup.png" alt="شوربة كريمة" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h2 class="text-lg font-black text-gray-800">شوربة كريمة بالمشروم</h2>
-                    <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 mt-2">
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="font-bold text-sm text-gray-700">حدد الكمية:</span>
-                            <div class="flex items-center gap-3 bg-white border border-gray-300 rounded-lg p-1">
-                                <button onclick="updateQty(this, -1, 80)" class="w-8 h-8 flex items-center justify-center text-red-500 font-bold text-xl">-</button>
-                                <span class="qty-val font-black text-gray-800 w-6 text-center text-lg">1</span>
-                                <button onclick="updateQty(this, 1, 80)" class="w-8 h-8 flex items-center justify-center text-flaky-green font-bold text-xl">+</button>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-gray-200">
-                            <span class="text-xs font-bold text-gray-500">الإجمالي المطلوب:</span>
-                            <span class="total-price text-lg font-black text-flaky-green">80 ج.م</span>
-                        </div>
-                    </div>
-                    <button onclick="sendWhatsAppOrder('شوربة كريمة بالمشروم', 80, this)" class="mt-3 w-full bg-flaky-green text-white py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> إرسال الطلب
-                    </button>
-                </div>
-            </div>
-
+                    `;
+                    container.insertAdjacentHTML('beforeend', cardHTML);
+                });
+            </script>
         </main>
 
-        <!-- معلومات الفروع والاتصال -->
-        <section class="p-5 mt-6 bg-white border-t border-gray-200 rounded-t-3xl shadow-[0_-4px_15px_-3px_rgba(0,0,0,0.05)]">
-            
-            <div class="text-center mb-6">
-                <span class="text-xs text-gray-500 block mb-1 font-bold">الخط الساخن للطلبات</span>
-                <a href="tel:01222200506" class="text-3xl font-black text-ak-gold tracking-widest block">01222200506</a>
-            </div>
-
+        <!-- معلومات الفروع -->
+        <section class="p-5 mt-4 bg-white border-t border-gray-200 shadow-inner">
             <!-- الفروع -->
-            <div class="bg-ak-bg p-4 rounded-2xl border border-gray-200 mb-3">
-                <h4 class="font-bold text-sm text-ak-dark mb-1"><i class="fa-solid fa-location-dot text-ak-gold ml-1"></i> فرع الشيخ زايد</h4>
-                <p class="text-gray-500 text-xs mb-3">وصلة دهشور مابين بوابة زايد 5 & زايد 4</p>
-                <a href="https://maps.google.com" target="_blank" class="bg-gray-800 text-white px-4 py-2 rounded-xl text-xs font-bold shadow hover:bg-black transition flex justify-center items-center gap-2">
-                    <i class="fa-solid fa-location-arrow"></i> الاتجاهات على الخريطة
+            <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 mb-3 flex justify-between items-center">
+                <div>
+                    <h4 class="font-bold text-sm text-gray-800"><i class="fa-solid fa-location-dot text-ak-gold ml-1"></i> فرع الشيخ زايد</h4>
+                    <p class="text-gray-500 text-[10px] mt-1">وصلة دهشور مابين بوابة زايد 5 & زايد 4</p>
+                </div>
+                <a href="https://maps.google.com" target="_blank" class="bg-gray-800 text-white px-3 py-1.5 rounded-lg text-xs font-bold shadow hover:bg-black transition flex items-center gap-1">
+                    <i class="fa-solid fa-location-arrow"></i> خريطة
                 </a>
             </div>
 
-            <div class="bg-ak-bg p-4 rounded-2xl border border-gray-200 mb-3">
-                <h4 class="font-bold text-sm text-ak-dark mb-1"><i class="fa-solid fa-location-dot text-ak-gold ml-1"></i> فرع الحصري</h4>
-                <p class="text-gray-500 text-xs mb-3">مركز هنيدة الامريكية بجوار جامعة 6 اكتوبر - ميدان جامع الحصري</p>
-                <a href="https://maps.google.com" target="_blank" class="bg-gray-800 text-white px-4 py-2 rounded-xl text-xs font-bold shadow hover:bg-black transition flex justify-center items-center gap-2">
-                    <i class="fa-solid fa-location-arrow"></i> الاتجاهات على الخريطة
+            <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 mb-3 flex justify-between items-center">
+                <div>
+                    <h4 class="font-bold text-sm text-gray-800"><i class="fa-solid fa-location-dot text-ak-gold ml-1"></i> فرع الحصري</h4>
+                    <p class="text-gray-500 text-[10px] mt-1">مركز هنيدة بجوار جامعة 6 اكتوبر</p>
+                </div>
+                <a href="https://maps.google.com" target="_blank" class="bg-gray-800 text-white px-3 py-1.5 rounded-lg text-xs font-bold shadow hover:bg-black transition flex items-center gap-1">
+                    <i class="fa-solid fa-location-arrow"></i> خريطة
                 </a>
             </div>
 
-            <div class="bg-ak-bg p-4 rounded-2xl border border-gray-200 mb-6">
-                <h4 class="font-bold text-sm text-ak-dark mb-1"><i class="fa-solid fa-location-dot text-ak-gold ml-1"></i> فرع الحي الخامس</h4>
-                <p class="text-gray-500 text-xs mb-3">جولدن مول - ميدان فودافون</p>
-                <a href="https://maps.google.com" target="_blank" class="bg-gray-800 text-white px-4 py-2 rounded-xl text-xs font-bold shadow hover:bg-black transition flex justify-center items-center gap-2">
-                    <i class="fa-solid fa-location-arrow"></i> الاتجاهات على الخريطة
+            <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 mb-5 flex justify-between items-center">
+                <div>
+                    <h4 class="font-bold text-sm text-gray-800"><i class="fa-solid fa-location-dot text-ak-gold ml-1"></i> فرع الحي الخامس</h4>
+                    <p class="text-gray-500 text-[10px] mt-1">جولدن مول - ميدان فودافون</p>
+                </div>
+                <a href="https://maps.google.com" target="_blank" class="bg-gray-800 text-white px-3 py-1.5 rounded-lg text-xs font-bold shadow hover:bg-black transition flex items-center gap-1">
+                    <i class="fa-solid fa-location-arrow"></i> خريطة
                 </a>
             </div>
 
             <!-- السوشيال ميديا -->
             <div class="flex justify-center items-center gap-4 mb-4">
-                <a href="https://www.facebook.com/abu.khaled.restaurant.eg" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center text-xl shadow-md hover:scale-110 transition"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/abu_khaled_restaurant" target="_blank" class="w-12 h-12 rounded-full bg-pink-600 text-white flex items-center justify-center text-xl shadow-md hover:scale-110 transition"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://wa.me/201222200506" target="_blank" class="w-12 h-12 rounded-full bg-flaky-green text-white flex items-center justify-center text-xl shadow-md hover:scale-110 transition"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="https://www.abukhaled-grill.com" target="_blank" class="w-12 h-12 rounded-full bg-ak-dark text-white flex items-center justify-center text-xl shadow-md hover:scale-110 transition"><i class="fa-solid fa-globe"></i></a>
+                <a href="https://www.facebook.com/abu.khaled.restaurant.eg" target="_blank" class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center text-lg shadow hover:scale-110"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/abu_khaled_restaurant" target="_blank" class="w-10 h-10 rounded-full bg-pink-600 text-white flex items-center justify-center text-lg shadow hover:scale-110"><i class="fa-brands fa-instagram"></i></a>
+                <a href="tel:01222200506" class="w-10 h-10 rounded-full bg-gray-800 text-white flex items-center justify-center text-lg shadow hover:scale-110"><i class="fa-solid fa-phone"></i></a>
+                <a href="https://www.abukhaled-grill.com" target="_blank" class="w-10 h-10 rounded-full bg-ak-gold text-white flex items-center justify-center text-lg shadow hover:scale-110"><i class="fa-solid fa-globe"></i></a>
             </div>
 
             <div class="text-center text-xs font-bold text-gray-400 mt-2">
@@ -422,34 +196,31 @@
 
     </div>
 
-    <!-- برمجة الفلترة، تحديث الكمية، ورسالة الواتساب الأنيقة -->
+    <!-- البرمجة -->
     <script>
         const whatsappNumber = "201222200506"; 
 
-        // فلترة الأقسام
         function filterCategory(category, button) {
             document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('bg-ak-gold', 'text-white');
-                btn.classList.add('bg-gray-100', 'text-gray-700');
+                btn.classList.remove('bg-ak-gold', 'text-white', 'border-ak-gold');
+                btn.classList.add('bg-white', 'text-gray-700', 'border-gray-200');
             });
-            button.classList.remove('bg-gray-100', 'text-gray-700');
-            button.classList.add('bg-ak-gold', 'text-white');
+            button.classList.remove('bg-white', 'text-gray-700', 'border-gray-200');
+            button.classList.add('bg-ak-gold', 'text-white', 'border-ak-gold');
 
             let items = document.querySelectorAll('.menu-item');
             items.forEach(item => {
                 if (category === 'all' || item.getAttribute('data-category') === category) {
-                    item.style.display = 'flex';
+                    item.style.display = 'block';
                 } else {
                     item.style.display = 'none';
                 }
             });
         }
 
-        // تحديث الكمية والسعر الديناميكي
-        function updateQty(btn, change, price) {
-            let container = btn.closest('.menu-item');
-            let input = container.querySelector('.qty-val');
-            let totalEl = container.querySelector('.total-price');
+        function updateQty(qtyId, change, price, totalId) {
+            let input = document.getElementById(qtyId);
+            let totalEl = document.getElementById(totalId);
             
             let currentQty = parseInt(input.innerText);
             let newQty = currentQty + change;
@@ -460,13 +231,12 @@
             }
         }
 
-        // إرسال طلب الصنف مباشرة بأسلوب شيك
-        function sendWhatsAppOrder(itemName, price, btn) {
-            let container = btn.closest('.menu-item');
-            let qty = parseInt(container.querySelector('.qty-val').innerText);
+        function sendOrder(itemName, qtyId, price) {
+            let qty = parseInt(document.getElementById(qtyId).innerText);
             let total = qty * price;
             
-            let message = `مرحباً سلسلة مطاعم أبوخالد للمشويات،\nأريد طلب:\n\n- ${itemName}\n- الكمية: ${qty}\n- الإجمالي: *${total} ج.م*\n\nبرجاء التأكيد وإبلاغي بخطوات التوصيل.`;
+            // رسالة واتساب شيك زي ما طلبت
+            let message = `مرحباً، أريد طلب:\n\nالصنف: ${itemName}\nالكمية: ${qty}\nالإجمالي: *${total} ج.م*\n\nبرجاء التأكيد وإبلاغي بخطوات التوصيل.`;
             
             let encodedMessage = encodeURIComponent(message);
             window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
