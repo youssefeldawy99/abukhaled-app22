@@ -24,13 +24,16 @@
         body { font-family: 'Tajawal', sans-serif; background-color: #e5e7eb; }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        /* شكل الماوس عشان السحب على الكمبيوتر */
+        .cursor-grab { cursor: grab; }
+        .cursor-grabbing { cursor: grabbing !important; }
     </style>
 </head>
 <body class="flex justify-center items-start min-h-screen">
 
     <div class="w-full max-w-md bg-white min-h-screen relative shadow-2xl pb-10">
 
-        <!-- الكوفر واللوجو العائم (إبداع التصميم الجديد) -->
+        <!-- الكوفر واللوجو العائم -->
         <div class="relative w-full h-56 bg-gray-900 rounded-b-[2.5rem] shadow-md mb-12">
             <img src="mix-grill.jpg" class="w-full h-full object-cover opacity-50 rounded-b-[2.5rem]" onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=600'">
             
@@ -39,7 +42,7 @@
                 <p class="text-sm font-bold text-ak-gold drop-shadow-md bg-black/60 px-5 py-1.5 rounded-full">أكلة حلوة لكل لمة حلوة</p>
             </div>
             
-            <!-- اللوجو الدائري الفخم -->
+            <!-- اللوجو -->
             <div class="absolute -bottom-10 left-1/2 transform -translate-x-1/2">
                 <div class="bg-black p-1 rounded-full shadow-2xl border-4 border-white">
                     <img src="ak-logo.jpg" alt="لوجو أبو خالد" class="h-20 w-20 rounded-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=AK&background=C5A059&color=fff'">
@@ -47,8 +50,8 @@
             </div>
         </div>
 
-        <!-- شريط الأقسام -->
-        <nav class="flex overflow-x-auto hide-scrollbar gap-2 p-3 whitespace-nowrap bg-white sticky top-0 z-40 border-b border-gray-100 shadow-sm">
+        <!-- شريط الأقسام (بخاصية السحب بالماوس) -->
+        <nav id="tabs-container" class="flex overflow-x-auto hide-scrollbar gap-2 p-3 whitespace-nowrap bg-white sticky top-0 z-40 border-b border-gray-100 shadow-sm cursor-grab select-none">
             <button onclick="filterCategory('all', this)" class="tab-btn bg-ak-gold text-white px-6 py-2 rounded-full font-bold text-sm shadow-md transition">الكل</button>
             <button onclick="filterCategory('grills', this)" class="tab-btn bg-gray-100 text-gray-700 px-5 py-2 rounded-full font-bold text-sm transition hover:bg-gray-200">المشويات</button>
             <button onclick="filterCategory('mains', this)" class="tab-btn bg-gray-100 text-gray-700 px-5 py-2 rounded-full font-bold text-sm transition hover:bg-gray-200">أطباق رئيسية</button>
@@ -60,7 +63,6 @@
 
         <!-- المنيو الكامل -->
         <main class="p-4 bg-ak-bg grid grid-cols-1 gap-4">
-            
             <script>
                 const menuItems = [
                     // المشويات
@@ -101,7 +103,7 @@
                     { cat: 'sandwiches', name: 'سندوتش كبدة ضاني كبير', price: 143, img: 'fajita.jpg' },
                     { cat: 'sandwiches', name: 'سندوتش شاورما لحمة كبير', price: 125, img: 'fajita.jpg' },
                     { cat: 'sandwiches', name: 'سندوتش شاورما فراخ كبير', price: 103, img: 'fajita.jpg' },
-                    { cat: 'sandwiches', name: 'سندوتش شيش طاووق كبير', price: 100, img: 'fajita.jpg' },
+                    { cat: 'sandwiches', name: 'سندوتش شي طاووق كبير', price: 100, img: 'fajita.jpg' },
                     { cat: 'sandwiches', name: 'سندوتش برجر ساده', price: 97, img: 'fajita.jpg' },
 
                     // الشوربة والسلطات
@@ -117,7 +119,6 @@
                 menuItems.forEach((item, index) => {
                     const cardHTML = `
                         <div class="menu-item bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-2" data-category="${item.cat}">
-                            <!-- تنسيق الصورة الوسط المتناسق -->
                             <div class="flex gap-4 mb-4 items-center">
                                 <img src="${item.img}" class="w-28 h-28 sm:w-32 sm:h-32 rounded-xl object-cover shadow-sm border border-gray-100" onerror="this.src='https://ui-avatars.com/api/?name=أبو+خالد&background=eee'">
                                 <div class="flex-1">
@@ -200,7 +201,8 @@
                 <a href="https://www.facebook.com/abu.khaled.restaurant.eg" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center text-xl shadow-md hover:scale-110 transition"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/abu_khaled_restaurant" target="_blank" class="w-12 h-12 rounded-full bg-pink-600 text-white flex items-center justify-center text-xl shadow-md hover:scale-110 transition"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://wa.me/201222200506" target="_blank" class="w-12 h-12 rounded-full bg-flaky-green text-white flex items-center justify-center text-xl shadow-md hover:scale-110 transition"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="https://www.abukhaled-grill.com" target="_blank" class="w-12 h-12 rounded-full bg-ak-dark text-white flex items-center justify-center text-xl shadow-md hover:scale-110 transition"><i class="fa-solid fa-globe"></i></a>
+                <!-- تم تغيير لون أيقونة الويب عشان تظهر واضحة -->
+                <a href="https://www.abukhaled-grill.com" target="_blank" class="w-12 h-12 rounded-full bg-gray-800 text-white flex items-center justify-center text-xl shadow-md hover:scale-110 transition"><i class="fa-solid fa-globe"></i></a>
             </div>
 
             <div class="text-center text-xs font-bold text-gray-400 mt-4">
@@ -214,6 +216,35 @@
     <script>
         const whatsappNumber = "201222200506"; 
 
+        // برمجة سحب التابات بالماوس على الكمبيوتر
+        const slider = document.getElementById('tabs-container');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('cursor-grabbing');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('cursor-grabbing');
+        });
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('cursor-grabbing');
+        });
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2; // سرعة السحب
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        // فلترة الأقسام
         function filterCategory(category, button) {
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.classList.remove('bg-ak-gold', 'text-white', 'shadow-md');
@@ -232,6 +263,7 @@
             });
         }
 
+        // تحديث الكمية
         function updateQty(qtyId, change, price, totalId) {
             let input = document.getElementById(qtyId);
             let totalEl = document.getElementById(totalId);
@@ -245,6 +277,7 @@
             }
         }
 
+        // إرسال الطلب
         function sendOrder(itemName, qtyId, price) {
             let qty = parseInt(document.getElementById(qtyId).innerText);
             let total = qty * price;
