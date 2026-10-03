@@ -30,35 +30,37 @@
 
     <div class="w-full max-w-md bg-white min-h-screen relative shadow-2xl pb-10">
 
-        <!-- الهيدر (لوجو في النص بدون رقم) -->
-        <header class="flex justify-center items-center py-3 bg-white sticky top-0 z-50 shadow-sm">
-            <img src="ak-logo.jpg" alt="لوجو أبو خالد" class="h-12 object-contain" onerror="this.src='https://ui-avatars.com/api/?name=AK&background=C5A059&color=fff'">
-        </header>
-
-        <!-- الكوفر والسلوجان -->
-        <div class="relative w-full h-48 bg-gray-900">
-            <img src="mix-grill.jpg" class="w-full h-full object-cover opacity-60" onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=600'">
-            <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
-                <h1 class="text-2xl font-black mb-2 drop-shadow-md">سلسلة مطاعم أبوخالد للمشويات</h1>
-                <p class="text-sm font-bold text-ak-gold drop-shadow-md">أكلة حلوة لكل لمة حلوة</p>
+        <!-- الكوفر واللوجو العائم (إبداع التصميم الجديد) -->
+        <div class="relative w-full h-56 bg-gray-900 rounded-b-[2.5rem] shadow-md mb-12">
+            <img src="mix-grill.jpg" class="w-full h-full object-cover opacity-50 rounded-b-[2.5rem]" onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=600'">
+            
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4 pb-4">
+                <h1 class="text-3xl font-black mb-2 drop-shadow-lg text-white">سلسلة مطاعم أبوخالد</h1>
+                <p class="text-sm font-bold text-ak-gold drop-shadow-md bg-black/60 px-5 py-1.5 rounded-full">أكلة حلوة لكل لمة حلوة</p>
+            </div>
+            
+            <!-- اللوجو الدائري الفخم -->
+            <div class="absolute -bottom-10 left-1/2 transform -translate-x-1/2">
+                <div class="bg-black p-1 rounded-full shadow-2xl border-4 border-white">
+                    <img src="ak-logo.jpg" alt="لوجو أبو خالد" class="h-20 w-20 rounded-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=AK&background=C5A059&color=fff'">
+                </div>
             </div>
         </div>
 
         <!-- شريط الأقسام -->
-        <nav class="flex overflow-x-auto hide-scrollbar gap-2 p-3 whitespace-nowrap bg-gray-50 sticky top-[72px] z-40 border-b border-gray-200 shadow-sm">
-            <button onclick="filterCategory('all', this)" class="tab-btn bg-ak-gold text-white px-5 py-2 rounded-full font-bold text-sm transition">الكل</button>
-            <button onclick="filterCategory('grills', this)" class="tab-btn bg-white text-gray-700 border border-gray-200 px-5 py-2 rounded-full font-bold text-sm transition">المشويات</button>
-            <button onclick="filterCategory('mains', this)" class="tab-btn bg-white text-gray-700 border border-gray-200 px-5 py-2 rounded-full font-bold text-sm transition">أطباق رئيسية</button>
-            <button onclick="filterCategory('tagines', this)" class="tab-btn bg-white text-gray-700 border border-gray-200 px-5 py-2 rounded-full font-bold text-sm transition">الطواجن</button>
-            <button onclick="filterCategory('mahshi', this)" class="tab-btn bg-white text-gray-700 border border-gray-200 px-5 py-2 rounded-full font-bold text-sm transition">المحاشي</button>
-            <button onclick="filterCategory('sandwiches', this)" class="tab-btn bg-white text-gray-700 border border-gray-200 px-5 py-2 rounded-full font-bold text-sm transition">السندوتشات</button>
-            <button onclick="filterCategory('soups', this)" class="tab-btn bg-white text-gray-700 border border-gray-200 px-5 py-2 rounded-full font-bold text-sm transition">الشوربة والسلطات</button>
+        <nav class="flex overflow-x-auto hide-scrollbar gap-2 p-3 whitespace-nowrap bg-white sticky top-0 z-40 border-b border-gray-100 shadow-sm">
+            <button onclick="filterCategory('all', this)" class="tab-btn bg-ak-gold text-white px-6 py-2 rounded-full font-bold text-sm shadow-md transition">الكل</button>
+            <button onclick="filterCategory('grills', this)" class="tab-btn bg-gray-100 text-gray-700 px-5 py-2 rounded-full font-bold text-sm transition hover:bg-gray-200">المشويات</button>
+            <button onclick="filterCategory('mains', this)" class="tab-btn bg-gray-100 text-gray-700 px-5 py-2 rounded-full font-bold text-sm transition hover:bg-gray-200">أطباق رئيسية</button>
+            <button onclick="filterCategory('tagines', this)" class="tab-btn bg-gray-100 text-gray-700 px-5 py-2 rounded-full font-bold text-sm transition hover:bg-gray-200">الطواجن</button>
+            <button onclick="filterCategory('mahshi', this)" class="tab-btn bg-gray-100 text-gray-700 px-5 py-2 rounded-full font-bold text-sm transition hover:bg-gray-200">المحاشي</button>
+            <button onclick="filterCategory('sandwiches', this)" class="tab-btn bg-gray-100 text-gray-700 px-5 py-2 rounded-full font-bold text-sm transition hover:bg-gray-200">السندوتشات</button>
+            <button onclick="filterCategory('soups', this)" class="tab-btn bg-gray-100 text-gray-700 px-5 py-2 rounded-full font-bold text-sm transition hover:bg-gray-200">الشوربة والسلطات</button>
         </nav>
 
         <!-- المنيو الكامل -->
         <main class="p-4 bg-ak-bg grid grid-cols-1 gap-4">
             
-            <!-- ================= قسم المشويات ================= -->
             <script>
                 const menuItems = [
                     // المشويات
@@ -107,39 +109,40 @@
                     { cat: 'soups', name: 'شوربة حمام بقطع اللحم', price: 90, img: 'soup.png' },
                     { cat: 'soups', name: 'شوربة كوارع بقطع الكوارع', price: 168, img: 'soup.png' },
                     { cat: 'soups', name: 'شوربة لسان عصفور', price: 46, img: 'soup.png' },
-                    { cat: 'soups', name: 'سلطات طحينة - خضراء - بابا غنوج - مخلل', price: 32, img: 'soup.png' }
+                    { cat: 'soups', name: 'سلطات طحينة وخضراء ومخلل', price: 32, img: 'soup.png' }
                 ];
 
                 const container = document.currentScript.parentElement;
                 
                 menuItems.forEach((item, index) => {
                     const cardHTML = `
-                        <div class="menu-item bg-white rounded-2xl shadow-sm border border-gray-100 p-3 mb-2" data-category="${item.cat}">
-                            <div class="flex gap-3">
-                                <img src="${item.img}" class="w-24 h-24 rounded-xl object-cover object-center border border-gray-100" onerror="this.src='https://ui-avatars.com/api/?name=أبو+خالد&background=eee'">
+                        <div class="menu-item bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-2" data-category="${item.cat}">
+                            <!-- تنسيق الصورة الوسط المتناسق -->
+                            <div class="flex gap-4 mb-4 items-center">
+                                <img src="${item.img}" class="w-28 h-28 sm:w-32 sm:h-32 rounded-xl object-cover shadow-sm border border-gray-100" onerror="this.src='https://ui-avatars.com/api/?name=أبو+خالد&background=eee'">
                                 <div class="flex-1">
-                                    <h3 class="font-bold text-gray-800 text-sm mb-1">${item.name}</h3>
-                                    <p class="text-xs text-gray-400">سعر الصنف: ${item.price} ج.م</p>
+                                    <h3 class="font-black text-gray-800 text-[15px] mb-2 leading-tight">${item.name}</h3>
+                                    <span class="text-xl font-black text-ak-gold">${item.price} <span class="text-xs text-gray-500 font-bold">ج.م</span></span>
                                 </div>
                             </div>
                             
-                            <div class="mt-3 bg-gray-50 rounded-xl p-3 border border-gray-100">
-                                <div class="flex justify-between items-center mb-2">
-                                    <span class="text-xs font-bold text-gray-700"><i class="fa-solid fa-calculator text-ak-gold ml-1"></i> حدد الكمية:</span>
-                                    <div class="flex items-center gap-3 bg-white border border-gray-200 rounded-lg p-1">
-                                        <button onclick="updateQty('qty-${index}', -1, ${item.price}, 'total-${index}')" class="w-6 h-6 flex items-center justify-center text-red-500 font-bold hover:bg-gray-100 rounded">-</button>
-                                        <span id="qty-${index}" class="font-bold text-gray-800 w-4 text-center text-sm">1</span>
-                                        <button onclick="updateQty('qty-${index}', 1, ${item.price}, 'total-${index}')" class="w-6 h-6 flex items-center justify-center text-flaky-green font-bold hover:bg-gray-100 rounded">+</button>
+                            <div class="bg-gray-50 rounded-xl p-3 border border-gray-100 mb-3">
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-sm font-bold text-gray-700"><i class="fa-solid fa-calculator text-ak-gold ml-1"></i> حدد الكمية:</span>
+                                    <div class="flex items-center gap-4 bg-white border border-gray-200 rounded-lg p-1 shadow-sm">
+                                        <button onclick="updateQty('qty-${index}', -1, ${item.price}, 'total-${index}')" class="w-8 h-8 flex items-center justify-center text-red-500 font-black text-xl hover:bg-gray-50 rounded">-</button>
+                                        <span id="qty-${index}" class="font-black text-gray-800 w-6 text-center text-lg">1</span>
+                                        <button onclick="updateQty('qty-${index}', 1, ${item.price}, 'total-${index}')" class="w-8 h-8 flex items-center justify-center text-flaky-green font-black text-xl hover:bg-gray-50 rounded">+</button>
                                     </div>
                                 </div>
                                 <div class="flex justify-between items-center pt-2 border-t border-gray-200">
                                     <span class="text-xs font-bold text-gray-500">الإجمالي المطلوب:</span>
-                                    <span id="total-${index}" class="text-sm font-black text-flaky-green">${item.price} ج.م</span>
+                                    <span id="total-${index}" class="text-lg font-black text-flaky-green">${item.price} ج.م</span>
                                 </div>
                             </div>
                             
-                            <button onclick="sendOrder('${item.name}', 'qty-${index}', ${item.price})" class="mt-2 w-full bg-flaky-green text-white py-2.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-sm hover:bg-green-600 transition">
-                                <i class="fa-brands fa-whatsapp text-lg"></i> إرسال الطلب
+                            <button onclick="sendOrder('${item.name}', 'qty-${index}', ${item.price})" class="w-full bg-flaky-green text-white py-3 rounded-xl font-bold text-base flex items-center justify-center gap-2 shadow-md hover:bg-green-600 transition">
+                                <i class="fa-brands fa-whatsapp text-xl"></i> إرسال الطلب
                             </button>
                         </div>
                     `;
@@ -148,49 +151,60 @@
             </script>
         </main>
 
-        <!-- معلومات الفروع -->
-        <section class="p-5 mt-4 bg-white border-t border-gray-200 shadow-inner">
-            <!-- الفروع -->
-            <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 mb-3 flex justify-between items-center">
+        <!-- معلومات الفروع والخرائط -->
+        <section class="p-5 mt-2 bg-white border-t border-gray-200 shadow-inner">
+            <h3 class="text-center font-black text-ak-dark text-lg mb-4 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-map-location-dot text-ak-gold"></i> فروعنا
+            </h3>
+
+            <!-- فرع الشيخ زايد -->
+            <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 mb-3 flex flex-col gap-3">
                 <div>
-                    <h4 class="font-bold text-sm text-gray-800"><i class="fa-solid fa-location-dot text-ak-gold ml-1"></i> فرع الشيخ زايد</h4>
-                    <p class="text-gray-500 text-[10px] mt-1">وصلة دهشور مابين بوابة زايد 5 & زايد 4</p>
+                    <h4 class="font-bold text-sm text-gray-800">فرع الشيخ زايد</h4>
+                    <p class="text-gray-500 text-xs mt-1 leading-relaxed">وصلة دهشور مابين بوابة زايد 5 & زايد 4</p>
                 </div>
-                <a href="https://maps.google.com" target="_blank" class="bg-gray-800 text-white px-3 py-1.5 rounded-lg text-xs font-bold shadow hover:bg-black transition flex items-center gap-1">
-                    <i class="fa-solid fa-location-arrow"></i> خريطة
+                <a href="https://maps.app.goo.gl/62FLMvvwRC5LMczd6" target="_blank" class="w-full bg-gray-800 text-white py-2.5 rounded-xl text-xs font-bold shadow hover:bg-black transition flex justify-center items-center gap-2">
+                    <i class="fa-solid fa-location-arrow"></i> الاتجاهات على الخريطة
                 </a>
             </div>
 
-            <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 mb-3 flex justify-between items-center">
+            <!-- فرع الحصري -->
+            <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 mb-3 flex flex-col gap-3">
                 <div>
-                    <h4 class="font-bold text-sm text-gray-800"><i class="fa-solid fa-location-dot text-ak-gold ml-1"></i> فرع الحصري</h4>
-                    <p class="text-gray-500 text-[10px] mt-1">مركز هنيدة بجوار جامعة 6 اكتوبر</p>
+                    <h4 class="font-bold text-sm text-gray-800">فرع الحصري</h4>
+                    <p class="text-gray-500 text-xs mt-1 leading-relaxed">مركز هنيدة الامريكية بجوار جامعة 6 اكتوبر - ميدان جامع الحصري</p>
                 </div>
-                <a href="https://maps.google.com" target="_blank" class="bg-gray-800 text-white px-3 py-1.5 rounded-lg text-xs font-bold shadow hover:bg-black transition flex items-center gap-1">
-                    <i class="fa-solid fa-location-arrow"></i> خريطة
+                <a href="https://maps.app.goo.gl/pdjpeDMn6UpxdSKR9" target="_blank" class="w-full bg-gray-800 text-white py-2.5 rounded-xl text-xs font-bold shadow hover:bg-black transition flex justify-center items-center gap-2">
+                    <i class="fa-solid fa-location-arrow"></i> الاتجاهات على الخريطة
                 </a>
             </div>
 
-            <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 mb-5 flex justify-between items-center">
+            <!-- فرع الحي الخامس -->
+            <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 mb-6 flex flex-col gap-3">
                 <div>
-                    <h4 class="font-bold text-sm text-gray-800"><i class="fa-solid fa-location-dot text-ak-gold ml-1"></i> فرع الحي الخامس</h4>
-                    <p class="text-gray-500 text-[10px] mt-1">جولدن مول - ميدان فودافون</p>
+                    <h4 class="font-bold text-sm text-gray-800">فرع الحي الخامس</h4>
+                    <p class="text-gray-500 text-xs mt-1 leading-relaxed">جولدن مول - ميدان فودافون</p>
                 </div>
-                <a href="https://maps.google.com" target="_blank" class="bg-gray-800 text-white px-3 py-1.5 rounded-lg text-xs font-bold shadow hover:bg-black transition flex items-center gap-1">
-                    <i class="fa-solid fa-location-arrow"></i> خريطة
+                <a href="https://maps.app.goo.gl/aVLsxCRkMLrWgkVm6" target="_blank" class="w-full bg-gray-800 text-white py-2.5 rounded-xl text-xs font-bold shadow hover:bg-black transition flex justify-center items-center gap-2">
+                    <i class="fa-solid fa-location-arrow"></i> الاتجاهات على الخريطة
                 </a>
+            </div>
+
+            <div class="text-center mb-6 pt-4 border-t border-gray-200">
+                <span class="text-sm text-gray-500 block mb-1 font-bold">الخط الساخن للطلبات</span>
+                <a href="tel:01222200506" class="text-3xl font-black text-ak-gold tracking-widest block drop-shadow-sm">01222200506</a>
             </div>
 
             <!-- السوشيال ميديا -->
             <div class="flex justify-center items-center gap-4 mb-4">
-                <a href="https://www.facebook.com/abu.khaled.restaurant.eg" target="_blank" class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center text-lg shadow hover:scale-110"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/abu_khaled_restaurant" target="_blank" class="w-10 h-10 rounded-full bg-pink-600 text-white flex items-center justify-center text-lg shadow hover:scale-110"><i class="fa-brands fa-instagram"></i></a>
-                <a href="tel:01222200506" class="w-10 h-10 rounded-full bg-gray-800 text-white flex items-center justify-center text-lg shadow hover:scale-110"><i class="fa-solid fa-phone"></i></a>
-                <a href="https://www.abukhaled-grill.com" target="_blank" class="w-10 h-10 rounded-full bg-ak-gold text-white flex items-center justify-center text-lg shadow hover:scale-110"><i class="fa-solid fa-globe"></i></a>
+                <a href="https://www.facebook.com/abu.khaled.restaurant.eg" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center text-xl shadow-md hover:scale-110 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/abu_khaled_restaurant" target="_blank" class="w-12 h-12 rounded-full bg-pink-600 text-white flex items-center justify-center text-xl shadow-md hover:scale-110 transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/201222200506" target="_blank" class="w-12 h-12 rounded-full bg-flaky-green text-white flex items-center justify-center text-xl shadow-md hover:scale-110 transition"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.abukhaled-grill.com" target="_blank" class="w-12 h-12 rounded-full bg-ak-dark text-white flex items-center justify-center text-xl shadow-md hover:scale-110 transition"><i class="fa-solid fa-globe"></i></a>
             </div>
 
-            <div class="text-center text-xs font-bold text-gray-400 mt-2">
-                جميع الحقوق محفوظة © 2026 أبو خالد للمشويات
+            <div class="text-center text-xs font-bold text-gray-400 mt-4">
+                جميع الحقوق محفوظة © 2026 سلسلة مطاعم أبوخالد للمشويات
             </div>
         </section>
 
@@ -202,11 +216,11 @@
 
         function filterCategory(category, button) {
             document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('bg-ak-gold', 'text-white', 'border-ak-gold');
-                btn.classList.add('bg-white', 'text-gray-700', 'border-gray-200');
+                btn.classList.remove('bg-ak-gold', 'text-white', 'shadow-md');
+                btn.classList.add('bg-gray-100', 'text-gray-700');
             });
-            button.classList.remove('bg-white', 'text-gray-700', 'border-gray-200');
-            button.classList.add('bg-ak-gold', 'text-white', 'border-ak-gold');
+            button.classList.remove('bg-gray-100', 'text-gray-700');
+            button.classList.add('bg-ak-gold', 'text-white', 'shadow-md');
 
             let items = document.querySelectorAll('.menu-item');
             items.forEach(item => {
@@ -235,8 +249,7 @@
             let qty = parseInt(document.getElementById(qtyId).innerText);
             let total = qty * price;
             
-            // رسالة واتساب شيك زي ما طلبت
-            let message = `مرحباً، أريد طلب:\n\nالصنف: ${itemName}\nالكمية: ${qty}\nالإجمالي: *${total} ج.م*\n\nبرجاء التأكيد وإبلاغي بخطوات التوصيل.`;
+            let message = `مرحباً سلسلة مطاعم أبوخالد للمشويات،\nأريد طلب:\n\n- الصنف: ${itemName}\n- الكمية: ${qty}\n- الإجمالي: *${total} ج.م*\n\nبرجاء التأكيد.`;
             
             let encodedMessage = encodeURIComponent(message);
             window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
