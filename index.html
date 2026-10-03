@@ -37,7 +37,7 @@
         <!-- الهيدر واللوجو -->
         <header class="flex justify-between items-center p-4 bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
             <div class="font-bold text-ak-gold flex items-center">
-                <img src="AK Logo.jpg" alt="لوجو أبو خالد" class="h-10 w-10 ml-2 rounded-full border border-gray-100 shadow-sm object-cover">
+                <img src="ak-logo.jpg" alt="لوجو أبو خالد" class="h-10 w-10 ml-2 rounded-full border border-gray-100 shadow-sm object-cover" onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=200&auto=format&fit=crop'">
                 <span class="text-lg text-ak-dark font-extrabold">أبو خالد</span>
             </div>
             <a href="tel:01222200506" class="bg-ak-gold text-white px-4 py-1.5 rounded-full font-bold text-xs shadow-md hover:bg-yellow-600 transition flex items-center gap-1.5">
@@ -56,12 +56,12 @@
             <button onclick="filterCategory('soups', this)" class="tab-btn bg-white text-gray-700 px-4 py-2 rounded-full font-medium text-xs border border-gray-200 shadow-sm transition">الشوربة</button>
         </nav>
 
-        <!-- المنيو المختصر والمنظم بالصور الحقيقية -->
+        <!-- المنيو المختصر بالصور الحقيقية وبدون مسافات في الأسامي -->
         <main id="menu-container" class="p-4 grid grid-cols-1 gap-4">
             
             <!-- قسم المشويات -->
             <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col" data-category="grills">
-                <img src="ميكش جريل.jpg" alt="مكس جريل" class="w-full h-44 object-cover">
+                <img src="mix-grill.jpg" alt="مكس جريل" class="w-full h-44 object-cover">
                 <div class="p-4 flex flex-col justify-between flex-grow">
                     <div>
                         <div class="flex justify-between items-start mb-1">
@@ -77,7 +77,7 @@
             </div>
 
             <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col" data-category="grills">
-                <img src="ريش بتلو.jpg" alt="ريش ضاني أو بتلو" class="w-full h-44 object-cover">
+                <img src="ribs.jpg" alt="ريش ضاني أو بتلو" class="w-full h-44 object-cover">
                 <div class="p-4 flex flex-col justify-between flex-grow">
                     <div>
                         <div class="flex justify-between items-start mb-1">
@@ -93,7 +93,7 @@
             </div>
 
             <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col" data-category="grills">
-                <img src="كباب.jpg" alt="كباب ضاني أو بتلو" class="w-full h-44 object-cover">
+                <img src="kebab.jpg" alt="كباب ضاني أو بتلو" class="w-full h-44 object-cover">
                 <div class="p-4 flex flex-col justify-between flex-grow">
                     <div>
                         <div class="flex justify-between items-start mb-1">
@@ -110,7 +110,7 @@
 
             <!-- الأطباق الرئيسية -->
             <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col" data-category="mains">
-                <img src="نصف بطة.jpg" alt="نصف بطة مع أرز وملوخية" class="w-full h-44 object-cover">
+                <img src="duck.jpg" alt="نصف بطة مع أرز وملوخية" class="w-full h-44 object-cover">
                 <div class="p-4 flex flex-col justify-between flex-grow">
                     <div>
                         <div class="flex justify-between items-start mb-1">
@@ -127,7 +127,7 @@
 
             <!-- الطواجن -->
             <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col" data-category="tagine">
-                <img src="طاجن لحمة بالبصل.jpg" alt="طاجن لحمة بالبصل" class="w-full h-44 object-cover">
+                <img src="onion-meat.jpg" alt="طاجن لحمة بالبصل" class="w-full h-44 object-cover">
                 <div class="p-4 flex flex-col justify-between flex-grow">
                     <div>
                         <div class="flex justify-between items-start mb-1">
@@ -143,7 +143,7 @@
             </div>
 
             <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col" data-category="tagine">
-                <img src="طاجن بامية باللحمة.jpg" alt="طاجن بامية باللحمة" class="w-full h-44 object-cover">
+                <img src="bamia.jpg" alt="طاجن بامية باللحمة" class="w-full h-44 object-cover">
                 <div class="p-4 flex flex-col justify-between flex-grow">
                     <div>
                         <div class="flex justify-between items-start mb-1">
@@ -159,7 +159,7 @@
             </div>
 
             <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col" data-category="tagine">
-                <img src="طاجن ملوخية ساده.jpg" alt="طاجن ملوخية سادة" class="w-full h-44 object-cover">
+                <img src="molokhia.jpg" alt="طاجن ملوخية سادة" class="w-full h-44 object-cover">
                 <div class="p-4 flex flex-col justify-between flex-grow">
                     <div>
                         <div class="flex justify-between items-start mb-1">
@@ -176,7 +176,7 @@
 
             <!-- المحاشي -->
             <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col" data-category="mahshi">
-                <img src="محشى مشكل كبير.jpg" alt="سرفيس محشي مشكل كبير" class="w-full h-44 object-cover">
+                <img src="mahshi.jpg" alt="سرفيس محشي مشكل كبير" class="w-full h-44 object-cover">
                 <div class="p-4 flex flex-col justify-between flex-grow">
                     <div>
                         <div class="flex justify-between items-start mb-1">
@@ -193,7 +193,7 @@
 
             <!-- السندوتشات -->
             <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col" data-category="sandwiches">
-                <img src="سنددوتش فاهيتا.jpg" alt="سندوتش شاورما لحمة كبير" class="w-full h-44 object-cover">
+                <img src="fajita.jpg" alt="سندوتش شاورما لحمة كبير" class="w-full h-44 object-cover">
                 <div class="p-4 flex flex-col justify-between flex-grow">
                     <div>
                         <div class="flex justify-between items-start mb-1">
@@ -210,7 +210,7 @@
 
             <!-- الشوربة -->
             <div class="menu-item bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col" data-category="soups">
-                <img src="شوربة كريمة.png" alt="شوربة كريمة بالمشروم" class="w-full h-44 object-cover">
+                <img src="soup.png" alt="شوربة كريمة بالمشروم" class="w-full h-44 object-cover">
                 <div class="p-4 flex flex-col justify-between flex-grow">
                     <div>
                         <div class="flex justify-between items-start mb-1">
@@ -227,7 +227,7 @@
 
         </main>
 
-        <!-- قسم الفروع والاتصال (تصميم مطابق لفليكي) -->
+        <!-- قسم الفروع والاتصال -->
         <section class="p-4 mt-6 bg-white border-t border-gray-200">
             <h3 class="text-center font-bold text-ak-gold text-lg mb-4 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-location-dot"></i> فروع أبو خالد
@@ -272,7 +272,7 @@
                 <a href="tel:01222200506" class="text-2xl font-extrabold text-ak-gold tracking-wider block">01222200506</a>
             </div>
 
-            <!-- أيقونات السوشيال ميديا واللينكات الملونة -->
+            <!-- أيقونات السوشيال ميديا -->
             <div class="flex justify-center items-center gap-4 my-5">
                 <a href="https://www.facebook.com/abu.khaled.restaurant.eg" target="_blank" class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center text-lg shadow hover:scale-110 transition"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/abu_khaled_restaurant" target="_blank" class="w-10 h-10 rounded-full bg-pink-600 text-white flex items-center justify-center text-lg shadow hover:scale-110 transition"><i class="fa-brands fa-instagram"></i></a>
@@ -304,7 +304,7 @@
 
     </div>
 
-    <!-- سكريبت البرمجة والفلترة والاتصال بالواتساب -->
+    <!-- سكريبت البرمجة والفلترة -->
     <script>
         let cart = [];
         const whatsappNumber = "201222200506"; 
